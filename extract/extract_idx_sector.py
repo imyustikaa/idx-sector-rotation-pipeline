@@ -142,25 +142,34 @@ def extract_sector(sector: str, tickers: List[str], start:str, end:str) -> pd.Da
   log.info(f"Extracting sector: {sector} | tickers: {tickers}")
   
   # process data for each ticker
-  records = []
+  # records = []
+  # for ticker in tickers:
+  df = yf.download(
+    tickers, 
+    start=start, 
+    end=end,
+    interval="1d",
+    auto_adjust=True,
+    progress=False,
+    threads=False
+    )
   
-  for ticker in tickers:
-    df = download_retry(ticker, start, end)
-    
-    if df.empty:
-      log.warning(f"✘ No data for {ticker}")
-      continue
-    
-    df = df.reset_index()
-    df.columns = [str(col).lower() for col in df.columns]
-    df["tickers"] = ticker
-    df["sector"] = sector
-    records.append(df)
-    
-    time.sleep(2)
-    log.info(f"✔ Successfully extracted {ticker}")
+  if df.empty:
+    log.warning(f"✘ No data for {sector}")
+    return pd.DataFrame()
   
-  return pd.concat(records, ignore_index=True) if records else pd.DataFrame()
+  if isinstance(df.index, pd.DatetimeIndex) and df.index.tz is not None:
+    df.index = df.index.tz_localize(None)
+  
+  df = df.reset_index()
+  df.columns = [
+    "_".join([str(c) for c in col]).strip().lower() if isinstance(col, tuple) else str(col).lower()
+    for col in df.columns
+  ]
+  df["sector"] = sector
+  
+  log.info(f"✔ Successfully extracted {sector}: {tickers}")
+  return df
 
 
 # extract benchmark data

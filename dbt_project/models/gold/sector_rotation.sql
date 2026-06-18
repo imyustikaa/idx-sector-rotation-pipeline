@@ -9,9 +9,9 @@
 with ticker_metrics as (
   select * from {{ ref('stg_ticker_metrics') }}
 
-  {% if is_incremental() %}
-    where week_label not in (select distinct week_label from {{ this }})
-  {% endif %}
+  -- {% if is_incremental() %}
+  --   where week_label not in (select distinct week_label from {{ this }})
+  -- {% endif %}
 ),
 
 sector_agg as (
@@ -31,11 +31,11 @@ weekly_return as (
     week_label,
     sector,
     avg(daily_return) * 5 as avg_weekly_return
-  from {{ source('bronze', 'sector_metrics') }}
+  from {{ source('silver', 'sector_daily_returns') }}
 
-  {% if is_incremental() %}
-    where week_label not in (select distinct week_label from {{ this }})
-  {% endif %}
+  -- {% if is_incremental() %}
+  --   where week_label not in (select distinct week_label from {{ this }})
+  -- {% endif %}
 
   group by week_label, sector
 ),
@@ -70,7 +70,9 @@ ranked as (
     avg_max_drawdown,
     avg_weekly_return,
     momentum_score,
-    rank() over (partition by week_label order by momentum_score desc) as sector_rank
+    row_number() over (partition by week_label 
+        order by momentum_score desc, avg_sharpe_ratio desc, avg_weekly_return desc
+    ) as sector_rank
   from scored
 )
 

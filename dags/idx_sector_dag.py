@@ -3,6 +3,7 @@
 import subprocess
 import sys
 import requests
+import time
 from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.python import PythonOperator
@@ -56,22 +57,31 @@ def run_spark_transform(**context):
 
 
 def run_dbt(**context):
-  result = subprocess.run(
-    ["dbt", "run",
-     "--project-dir", "/opt/airflow/dbt_project",
-     "--profiles-dir", "/opt/airflow/dbt_project"],
-    capture_output=True,
-    text=True,
-  )
-  
+  full_refresh = Variable.get("dbt_full_refresh", default_var="false").lower() == "true"
+
+  cmd = ["dbt", "run",
+  "--project-dir", "/opt/airflow/dbt_project",
+  "--profiles-dir", "/opt/airflow/dbt_project"]
+
+  if full_refresh:
+    cmd.append("--full-refresh")
+    log.info("Running dbt with --full-refresh")
+
+  result = subprocess.run(cmd, capture_output=True, text=True,)
   print(result.stdout)
-  
   if result.returncode != 0:
     print(result.stderr)
     raise RuntimeError(f"✘ Failed dbt run: \n{result.stderr}")
-  
   print(f"✔ dbt run complete!")
-  
+
+def reset_full_refresh(**context):
+  current = Variable.get("dbt_full_refresh", default_var="false")
+  if current.lower() == "true":
+    Variable.set("dbt_full_refresh", "false")
+    print("✔ dbt_full_refresh reset to false")
+  else:
+    print("dbt_full_refresh: no reset needed")
+
 
 def run_dbt_test(**context):
   result = subprocess.run(
@@ -96,7 +106,23 @@ def metabase_sync(**context):
   MB_USER      = Variable.get("metabase_admin")
   MB_PASS      = Variable.get("metabase_pass")
   MB_WAREHOUSE_DB_ID = 2
+  MAX_READY_RETRIES = 10
+  READY_INTERVAL = 15
   
+  for attempt in range(1, MAX_READY_RETRIES+1):
+    try:
+      health = requests.get(f"{METABASE_URL}/api/health", timeout=10)
+      if health.status_code == 200 and health.json().get("status") == "ok":
+        print(f"✔ Metabase ready | attempt {attempt}")
+        break
+    except Exception as e:
+      print(f"Metabase not ready yet... | attempt {attempt}")
+    
+    if attempt == MAX_READY_RETRIES:
+      raise RuntimeError("✘ Metabase not ready")
+    
+    time.sleep(READY_INTERVAL)
+
   session = requests.post(
     f"{METABASE_URL}/api/session",
     json={"username": MB_USER, "password": MB_PASS},
@@ -104,7 +130,6 @@ def metabase_sync(**context):
   )
   session.raise_for_status()
   token = session.json()["id"]
-  
   headers = {"X-Metabase-Session": token}
   
   sync = requests.post(
@@ -115,6 +140,8 @@ def metabase_sync(**context):
   sync.raise_for_status()
   print(f"✔ Metabase sync_schema triggered (DB ID: {MB_WAREHOUSE_DB_ID})")
   
+  time.sleep(30)
+
   rescan = requests.post(
     f"{METABASE_URL}/api/database/{MB_WAREHOUSE_DB_ID}/rescan_values",
     headers=headers,
@@ -163,14 +190,20 @@ with DAG(
     task_id = "dbt_run",
     python_callable = run_dbt,
   )
-  
-  # Task5: dbt_test
-  t_dbt_test = PythonOperator(
-    task_id  = "dbt_test",
-    python_callable = run_dbt_test
+
+  # Task5: reset flag
+  t_reset_flag = PythonOperator(
+    task_id = "reset_dbt_fullrefresh",
+    python_callable=reset_full_refresh,
   )
   
-  # Task6: Metabase sync schema
+  # Task6: dbt_test
+  t_dbt_test = PythonOperator(
+    task_id  = "dbt_test",
+    python_callable = run_dbt_test,
+  )
+  
+  # Task7: Metabase sync schema
   t_metabase_sync = PythonOperator(
     task_id = "metabase_sync",
     python_callable = metabase_sync,
@@ -183,6 +216,7 @@ with DAG(
     >> t_extract
     >> t_transform
     >> t_dbt_run
+    >> t_reset_flag
     >> t_dbt_test
     >> t_metabase_sync
   )

@@ -9,9 +9,9 @@
 with ticker_metrics as (
   select * from {{ ref('stg_ticker_metrics') }}
 
-  -- {% if is_incremental() %}
-  --   where week_label not in (select distinct week_label from {{ this }})
-  -- {% endif %}
+  {% if is_incremental() %}
+    where week_label not in (select distinct week_label from {{ this }})
+  {% endif %}
 ),
 
 sector_agg as (
@@ -33,9 +33,9 @@ weekly_return as (
     avg(daily_return) * 5 as avg_weekly_return
   from {{ source('silver', 'sector_daily_returns') }}
 
-  -- {% if is_incremental() %}
-  --   where week_label not in (select distinct week_label from {{ this }})
-  -- {% endif %}
+  {% if is_incremental() %}
+    where week_label not in (select distinct week_label from {{ this }})
+  {% endif %}
 
   group by week_label, sector
 ),

@@ -1,7 +1,7 @@
 import logging
 import psycopg2
 import re
-from datetime import datetime
+from datetime import datetime, timedelta
 from pyspark.sql import SparkSession, DataFrame
 from pyspark.sql import functions as  F
 from pyspark.sql.window import Window
@@ -127,6 +127,14 @@ def unpivot_sector_df(df: DataFrame, sector: str) -> DataFrame:
   
   return result
 
+def get_last_n_weeks(n: int) -> list:
+  labels = []
+  today = datetime.today()
+  for i in range(n):
+    target = today - timedelta(weeks=i)
+    label = target.strftime("%Y-W%W")
+    labels.append(label)
+  return labels
   
 def read_benchmark_parquet(spark:SparkSession) -> DataFrame:
   path = f"s3a://{RAW_BUCKET}/daily/*/idx_sector/benchmark_IHSG.parquet"
@@ -160,7 +168,7 @@ def compute_metrics(df: DataFrame, benchmark_df: DataFrame) -> DataFrame:
 
 
 # ======================== Delete Old Data ========================
-def delete_old_data(week_label: str):
+def delete_old_data(week_labels: list):
   try:
     conn = psycopg2.connect(
       host="postgres-warehouse",
@@ -169,12 +177,13 @@ def delete_old_data(week_label: str):
       password=PG_PROPS["password"]
     )
     cur = conn.cursor()
-    log.info(f"Cleaning existing data for week: {week_label}")
+    placeholders = ",".join(["%s"] * len(week_labels))
+    log.info(f"Cleaning existing data for week: {week_labels}")
     # cur.execute(f"DELETE FROM bronze.sector_metrics WHERE week_label = '{week_label}'")
     # cur.execute(f"DELETE FROM bronze.sector_prices WHERE week_label = '{week_label}'")
-    cur.execute(f"DELETE FROM silver.ihsg_benchmark WHERE week_label = '{week_label}'")
-    cur.execute(f"DELETE FROM silver.ticker_metrics_daily WHERE week_label = '{week_label}'")
-    cur.execute(f"DELETE FROM silver.sector_daily_returns WHERE week_label = '{week_label}'")
+    cur.execute(f"DELETE FROM silver.ihsg_benchmark WHERE week_label IN ({placeholders})", week_labels)
+    cur.execute(f"DELETE FROM silver.ticker_metrics_daily WHERE week_label IN ({placeholders})", week_labels)
+    cur.execute(f"DELETE FROM silver.sector_daily_returns WHERE week_label IN ({placeholders})", week_labels)
     conn.commit()
     cur.close()
     conn.close()
@@ -206,10 +215,12 @@ def run_transform(week_label: str = None) -> None:
   
   log.info(f"Starting transform | week: {week_label}")
   spark = create_spark_session()
-  delete_old_data(week_label)
+
+  last_12_weeks = get_last_n_weeks(12)
+  delete_old_data(last_12_weeks)
 
   week_expr = F.format_string("%04d-W%02d", F.year("date"), F.weekofyear("date"))
-  
+
   log.info("Processing benchmark from MinIO")
   benchmark_df = read_benchmark_parquet(spark)
   benchmark_df = clean_column_names(benchmark_df)
@@ -220,8 +231,8 @@ def run_transform(week_label: str = None) -> None:
 
   benchmark_weekly_df = (benchmark_df
                         .withColumn("calc_week", week_expr)
-                        .filter(F.col("calc_week") == week_label)
-                        .withColumn("week_label", F.lit(week_label))
+                        .filter(F.col("calc_week").isin(last_12_weeks))
+                        .withColumn("week_label", F.col("calc_week"))
                         .withColumn("trade_date", F.col("date").cast("date"))
                         .withColumn("loaded_at", F.current_timestamp())
                         .select("trade_date", "week_label", "close", "daily_return", "loaded_at"))
@@ -249,8 +260,8 @@ def run_transform(week_label: str = None) -> None:
   for df in all_sectors[1:]:
     combined_df = combined_df.union(df)
 
-    current_week_df = combined_df.withColumn("calc_week", week_expr) \
-                                 .filter(F.col("calc_week") == week_label)
+  current_week_df = combined_df.withColumn("calc_week", week_expr) \
+                               .filter(F.col("calc_week").isin(last_12_weeks))
     
   # metrics_df = (
   #   combined_df
@@ -280,7 +291,7 @@ def run_transform(week_label: str = None) -> None:
   
   silver_df = (
     current_week_df
-    .withColumn("week_label", F.lit(week_label))
+    .withColumn("week_label", F.col("calc_week"))
     .withColumn("trade_date", F.col("date").cast("date"))
     .withColumn("computed_at", F.current_timestamp())
     .fillna(0, subset=["price_momentum", "sharpe_ratio", "rolling_beta", "max_drawdown"])

@@ -59,8 +59,8 @@ def create_spark_session() -> SparkSession:
   
 
 # ======================= Read from MinIO =======================
-def read_sector_parquet(spark: SparkSession, week_label:str, sector:str) -> DataFrame:
-  path = f"s3a://{RAW_BUCKET}/daily/{week_label}/idx_sector/{sector}.parquet"
+def read_sector_parquet(spark: SparkSession, sector:str) -> DataFrame:
+  path = f"s3a://{RAW_BUCKET}/daily/*/idx_sector/{sector}.parquet"
   try:
     df = spark.read.parquet(path)
     log.info(f"Read {sector}: {df.count()} rows")
@@ -128,8 +128,8 @@ def unpivot_sector_df(df: DataFrame, sector: str) -> DataFrame:
   return result
 
   
-def read_benchmark_parquet(spark:SparkSession, week_label:str) -> DataFrame:
-  path = f"s3a://{RAW_BUCKET}/daily/{week_label}/idx_sector/benchmark_IHSG.parquet"
+def read_benchmark_parquet(spark:SparkSession) -> DataFrame:
+  path = f"s3a://{RAW_BUCKET}/daily/*/idx_sector/benchmark_IHSG.parquet"
   return spark.read.parquet(path)
 
 
@@ -137,13 +137,13 @@ def read_benchmark_parquet(spark:SparkSession, week_label:str) -> DataFrame:
 def compute_metrics(df: DataFrame, benchmark_df: DataFrame) -> DataFrame:
   # calculate market return
   bench = benchmark_df.withColumn("market_return", F.log(F.col("close") / F.lag("close").over(Window.orderBy("date"))))
-  df = df.withColumn("daily_return", F.log(F.col("close") / F.lag("close").over(Window.partitionBy("ticker").orderBy("date"))))
-  
-  df = df.join(bench.select("date", "market_return"), on="date", how="left")
-  
+
   w_ticker = Window.partitionBy("ticker").orderBy("date")
   w_short = Window.partitionBy("ticker").orderBy("date").rowsBetween(-63, 0)
   w_long = Window.partitionBy("ticker").orderBy("date").rowsBetween(-252, 0)
+  
+  df = df.withColumn("daily_return", F.log(F.col("close") / F.lag("close").over(w_ticker)))
+  df = df.join(bench.select("date", "market_return"), on="date", how="left")
   
   # calculate metrics
   df = df \
@@ -170,9 +170,11 @@ def delete_old_data(week_label: str):
     )
     cur = conn.cursor()
     log.info(f"Cleaning existing data for week: {week_label}")
-    cur.execute(f"DELETE FROM bronze.sector_metrics WHERE week_label = '{week_label}'")
-    cur.execute(f"DELETE FROM bronze.sector_prices WHERE week_label = '{week_label}'")
+    # cur.execute(f"DELETE FROM bronze.sector_metrics WHERE week_label = '{week_label}'")
+    # cur.execute(f"DELETE FROM bronze.sector_prices WHERE week_label = '{week_label}'")
+    cur.execute(f"DELETE FROM silver.ihsg_benchmark WHERE week_label = '{week_label}'")
     cur.execute(f"DELETE FROM silver.ticker_metrics_daily WHERE week_label = '{week_label}'")
+    cur.execute(f"DELETE FROM silver.sector_daily_returns WHERE week_label = '{week_label}'")
     conn.commit()
     cur.close()
     conn.close()
@@ -192,7 +194,7 @@ def load_to_postgres(df: DataFrame, table: str, mode: str = "append") -> None:
     .option("user", PG_PROPS["user"]) \
     .option("password", PG_PROPS["password"]) \
     .option("driver", PG_PROPS["driver"]) \
-    .mode("overwrite") \
+    .mode(mode) \
     .save()
   log.info(f"Loaded to {table}: {df.count()} rows")
   
@@ -205,15 +207,23 @@ def run_transform(week_label: str = None) -> None:
   log.info(f"Starting transform | week: {week_label}")
   spark = create_spark_session()
   delete_old_data(week_label)
+
+  week_expr = F.format_string("%04d-W%02d", F.year("date"), F.weekofyear("date"))
   
-  benchmark_df = read_benchmark_parquet(spark, week_label)
+  log.info("Processing benchmark from MinIO")
+  benchmark_df = read_benchmark_parquet(spark)
   benchmark_df = clean_column_names(benchmark_df)
-  log.info(f"Benchmark columns after cleaning: {benchmark_df.columns}")
+
+  benchmark_weekly_df = benchmark_df.withColumn("calc_week", week_expr) \
+                                    .filter(F.col("clac_week") == week_label) \
+                                    .withColumn("week_label", F.lit(week_label)) \
+                                    .drop("calc_week")
+
+  load_to_postgres(benchmark_weekly_df, "silver.ihsg_benchmark")
   
   all_sectors = []
-  
   for sector in SECTORS:
-    df = read_sector_parquet(spark, week_label, sector)
+    df = read_sector_parquet(spark, sector)
     if df.rdd.isEmpty():
       log.warning(f"Skipping empty sector: {sector}")
       continue
@@ -230,35 +240,38 @@ def run_transform(week_label: str = None) -> None:
   combined_df = all_sectors[0]
   for df in all_sectors[1:]:
     combined_df = combined_df.union(df)
+
+    current_week_df = combined_df.withColumn("calc_week", week_expr) \
+                                 .filter(F.col("calc_week") == week_label)
     
-  metrics_df = (
-    combined_df
-    .withColumn("week_label", F.lit(week_label))
-    .withColumn("trade_date", F.col("date").cast("date"))
-    .withColumn("loaded_at", F.current_timestamp())
-    .fillna(0, subset=["daily_return"])
-    .select(
-      "trade_date", "week_label", "sector",
-      "ticker", "daily_return", "loaded_at"
-    )
-  )
-  load_to_postgres(metrics_df, "bronze.sector_metrics")
+  # metrics_df = (
+  #   combined_df
+  #   .withColumn("week_label", F.lit(week_label))
+  #   .withColumn("trade_date", F.col("date").cast("date"))
+  #   .withColumn("loaded_at", F.current_timestamp())
+  #   .fillna(0, subset=["daily_return"])
+  #   .select(
+  #     "trade_date", "week_label", "sector",
+  #     "ticker", "daily_return", "loaded_at"
+  #   )
+  # )
+  # load_to_postgres(metrics_df, "bronze.sector_metrics")
   
-  price_df = (
-    combined_df
-    .withColumn("week_label", F.lit(week_label))
-    .withColumn("trade_date", F.col("date").cast("date"))
-    .withColumn("loaded_at", F.current_timestamp())
-    .select(
-      "trade_date", "week_label", "sector", "ticker",
-      F.col("close").alias("close_price"),
-      "volume", "loaded_at"
-    )
-  )
-  load_to_postgres(price_df, "bronze.sector_prices")
+  # price_df = (
+  #   combined_df
+  #   .withColumn("week_label", F.lit(week_label))
+  #   .withColumn("trade_date", F.col("date").cast("date"))
+  #   .withColumn("loaded_at", F.current_timestamp())
+  #   .select(
+  #     "trade_date", "week_label", "sector", "ticker",
+  #     F.col("close").alias("close_price"),
+  #     "volume", "loaded_at"
+  #   )
+  # )
+  # load_to_postgres(price_df, "bronze.sector_prices")
   
   silver_df = (
-    combined_df
+    current_week_df
     .withColumn("week_label", F.lit(week_label))
     .withColumn("trade_date", F.col("date").cast("date"))
     .withColumn("computed_at", F.current_timestamp())
@@ -270,8 +283,21 @@ def run_transform(week_label: str = None) -> None:
     )
   )
   load_to_postgres(silver_df, "silver.ticker_metrics_daily")
+
+  silver_returns_df = (
+    current_week_df
+    .withColumn("week_label", F.lit(week_label))
+    .withColumn("trade_date", F.col("date").cast("date"))
+    .withColumn("loaded_at", F.current_timestamp())
+    .fillna(0, subset=["daily_return"])
+    .select(
+      "trade_date", "week_label", "sector", "ticker",
+      "daily_return", "loaded_at"
+    )
+  )
+  load_to_postgres(silver_returns_df, "silver.sector_daily_returns", mode="append")
   
-  log.info(f"Transform complete for week: {week_label}")
+  log.info(f"✔ Transform complete for week: {week_label}")
 
 
 if __name__ == "__main__":

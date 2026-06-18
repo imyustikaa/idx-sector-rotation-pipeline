@@ -213,13 +213,20 @@ def run_transform(week_label: str = None) -> None:
   log.info("Processing benchmark from MinIO")
   benchmark_df = read_benchmark_parquet(spark)
   benchmark_df = clean_column_names(benchmark_df)
+  benchmark_df = benchmark_df.dropDuplicates(["date"])
 
-  benchmark_weekly_df = benchmark_df.withColumn("calc_week", week_expr) \
-                                    .filter(F.col("clac_week") == week_label) \
-                                    .withColumn("week_label", F.lit(week_label)) \
-                                    .drop("calc_week")
+  bench_window = Window.orderBy("date")
+  benchmark_df = benchmark_df.withColumn("daily_return", F.log(F.col("close")/F.lag("close").over(bench_window)))
 
-  load_to_postgres(benchmark_weekly_df, "silver.ihsg_benchmark")
+  benchmark_weekly_df = (benchmark_df
+                        .withColumn("calc_week", week_expr)
+                        .filter(F.col("calc_week") == week_label)
+                        .withColumn("week_label", F.lit(week_label))
+                        .withColumn("trade_date", F.col("date").cast("date"))
+                        .withColumn("loaded_at", F.current_timestamp())
+                        .select("trade_date", "week_label", "close", "daily_return", "loaded_at"))
+
+  load_to_postgres(benchmark_weekly_df, "silver.ihsg_benchmark", mode="append")
   
   all_sectors = []
   for sector in SECTORS:
@@ -230,6 +237,7 @@ def run_transform(week_label: str = None) -> None:
     
     df = clean_column_names(df)
     df = unpivot_sector_df(df, sector)
+    df = df.dropDuplicates(["date", "ticker"])
     df = compute_metrics(df, benchmark_df)
     all_sectors.append(df)    
     

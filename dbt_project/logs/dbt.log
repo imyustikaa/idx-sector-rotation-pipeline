@@ -1,0 +1,1801 @@
+[0m12:57:02.149693 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72e1425a2ec0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72e14104de10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72e14104dd50>]}
+
+
+============================== 12:57:02.157158 | 18050db6-017e-494e-b487-eb7230d81f2a ==============================
+[0m12:57:02.157158 [info ] [MainThread]: Running with dbt=1.12.0-b3
+[0m12:57:02.158581 [debug] [MainThread]: running dbt with arguments {'invocation_command': 'dbt run --project-dir /opt/airflow/dbt_project --profiles-dir /opt/airflow/dbt_project', 'quiet': 'False', 'fail_fast': 'False', 'indirect_selection': 'eager', 'no_print': 'None', 'static_parser': 'True', 'introspect': 'True', 'maximum_seed_size_mib': '1', 'debug': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_colors': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'printer_width': '80', 'warn_error': 'None', 'cache_selected_only': 'False', 'version_check': 'True', 'log_path': '/opt/airflow/dbt_project/logs', 'empty': 'False', 'log_format': 'default', 'use_experimental_parser': 'False', 'profiles_dir': '/opt/airflow/dbt_project', 'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'target_path': 'None'}
+[0m12:57:02.167321 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Runtime Error
+  output 'dev' of profile 'idx_warehouse' is misconfigured in profiles.yml
+[0m12:57:02.169149 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.12687948, "process_in_blocks": "47024", "process_kernel_time": 0.369754, "process_mem_max_rss": "101128", "process_out_blocks": "896", "process_user_time": 1.554751}
+[0m12:57:02.170491 [debug] [MainThread]: Command `dbt run` failed at 12:57:02.170299 after 0.13 seconds
+[0m12:57:02.171420 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72e1425a2ec0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72e14106a6b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72e141069510>]}
+[0m12:57:02.172790 [debug] [MainThread]: Flushing usage events
+[0m12:57:03.430176 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:00:31.359325 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c13ce376dd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c13cce45de0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c13cce45d80>]}
+
+
+============================== 13:00:31.365568 | 6ee22391-0825-42a9-b429-29c52b2e2e65 ==============================
+[0m13:00:31.365568 [info ] [MainThread]: Running with dbt=1.12.0-b3
+[0m13:00:31.366815 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'write_json': 'True', 'partial_parse': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'quiet': 'False', 'log_path': '/opt/airflow/dbt_project/logs', 'use_experimental_parser': 'False', 'send_anonymous_usage_stats': 'True', 'introspect': 'True', 'invocation_command': 'dbt run --project-dir /opt/airflow/dbt_project --profiles-dir /opt/airflow/dbt_project', 'version_check': 'True', 'fail_fast': 'False', 'target_path': 'None', 'use_colors': 'True', 'profiles_dir': '/opt/airflow/dbt_project', 'cache_selected_only': 'False', 'empty': 'False', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'warn_error': 'None', 'debug': 'False', 'maximum_seed_size_mib': '1', 'no_print': 'None', 'static_parser': 'True', 'log_format': 'default'}
+[0m13:00:31.375260 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Runtime Error
+  output 'dev' of profile 'idx_warehouse' is misconfigured in profiles.yml
+[0m13:00:31.377478 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.11146185, "process_in_blocks": "0", "process_kernel_time": 0.223012, "process_mem_max_rss": "101660", "process_out_blocks": "0", "process_user_time": 1.289974}
+[0m13:00:31.378986 [debug] [MainThread]: Command `dbt run` failed at 13:00:31.378847 after 0.11 seconds
+[0m13:00:31.379963 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c13ce376dd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c13ccc6bfd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c13ccc69480>]}
+[0m13:00:31.380798 [debug] [MainThread]: Flushing usage events
+[0m13:00:32.720827 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:03:54.945875 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d1302476d70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d1300c79d50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d1300c79cf0>]}
+
+
+============================== 13:03:54.950882 | a401a3c3-1a8d-4beb-a3d9-911eaed0286a ==============================
+[0m13:03:54.950882 [info ] [MainThread]: Running with dbt=1.12.0-b3
+[0m13:03:54.952101 [debug] [MainThread]: running dbt with arguments {'use_colors': 'True', 'invocation_command': 'dbt run --project-dir /opt/airflow/dbt_project --profiles-dir /opt/airflow/dbt_project', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'profiles_dir': '/opt/airflow/dbt_project', 'no_print': 'None', 'log_cache_events': 'False', 'empty': 'False', 'quiet': 'False', 'debug': 'False', 'maximum_seed_size_mib': '1', 'target_path': 'None', 'use_experimental_parser': 'False', 'version_check': 'True', 'warn_error': 'None', 'partial_parse': 'True', 'static_parser': 'True', 'log_path': '/opt/airflow/dbt_project/logs', 'printer_width': '80', 'send_anonymous_usage_stats': 'True', 'write_json': 'True', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'log_format': 'default', 'indirect_selection': 'eager'}
+[0m13:03:55.255239 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'a401a3c3-1a8d-4beb-a3d9-911eaed0286a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d1300e05b70>]}
+[0m13:03:55.365264 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'a401a3c3-1a8d-4beb-a3d9-911eaed0286a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d130327abc0>]}
+[0m13:03:55.368269 [info ] [MainThread]: Registered adapter: postgres=1.10.1
+[0m13:03:55.462678 [debug] [MainThread]: checksum: 7e549073af6bc05033fb11f06bb3ab22b0ba2ed35564cb8e246fefe3ef960728, vars: {}, profile: idx_warehouse, target: dev, version: 1.12.0b3
+[0m13:03:55.465905 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m13:03:55.467086 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'a401a3c3-1a8d-4beb-a3d9-911eaed0286a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d13003a8df0>]}
+[0m13:03:56.295995 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Compilation Error
+  Model 'model.idx_sector_rotation.sector_rotation' (models/gold/sector_rotation.sql) depends on a source named 'raw.sector_metrics' which was not found
+[0m13:03:56.297908 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 1.4437722, "process_in_blocks": "13720", "process_kernel_time": 0.418787, "process_mem_max_rss": "117772", "process_out_blocks": "0", "process_user_time": 2.242259}
+[0m13:03:56.299192 [debug] [MainThread]: Command `dbt run` failed at 13:03:56.299035 after 1.45 seconds
+[0m13:03:56.300228 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d1302476d70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d12fef6b070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d12fef83760>]}
+[0m13:03:56.301270 [debug] [MainThread]: Flushing usage events
+[0m13:03:57.439073 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:24:49.099103 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7eda45dd6d10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7eda44837880>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7eda44837d00>]}
+
+
+============================== 13:24:49.104643 | b4ab43e3-fc43-42a0-b12f-8fef49e5ff01 ==============================
+[0m13:24:49.104643 [info ] [MainThread]: Running with dbt=1.12.0-b3
+[0m13:24:49.105608 [debug] [MainThread]: running dbt with arguments {'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_format': 'default', 'cache_selected_only': 'False', 'indirect_selection': 'eager', 'invocation_command': 'dbt run --project-dir /opt/airflow/dbt_project --profiles-dir /opt/airflow/dbt_project', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'target_path': 'None', 'printer_width': '80', 'log_cache_events': 'False', 'debug': 'False', 'quiet': 'False', 'fail_fast': 'False', 'write_json': 'True', 'empty': 'False', 'no_print': 'None', 'log_path': '/opt/airflow/dbt_project/logs', 'use_experimental_parser': 'False', 'profiles_dir': '/opt/airflow/dbt_project', 'warn_error': 'None', 'use_colors': 'True', 'static_parser': 'True', 'maximum_seed_size_mib': '1', 'partial_parse': 'True'}
+[0m13:24:49.256611 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b4ab43e3-fc43-42a0-b12f-8fef49e5ff01', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7eda44837a00>]}
+[0m13:24:49.347776 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b4ab43e3-fc43-42a0-b12f-8fef49e5ff01', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7eda451e6110>]}
+[0m13:24:49.349651 [info ] [MainThread]: Registered adapter: postgres=1.10.1
+[0m13:24:49.424855 [debug] [MainThread]: checksum: 7e549073af6bc05033fb11f06bb3ab22b0ba2ed35564cb8e246fefe3ef960728, vars: {}, profile: idx_warehouse, target: dev, version: 1.12.0b3
+[0m13:24:49.427952 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m13:24:49.429092 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'b4ab43e3-fc43-42a0-b12f-8fef49e5ff01', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7eda43988e50>]}
+[0m13:24:50.504235 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `accepted_value` defined on 'sector_rotation'
+in package 'idx_sector_rotation' (models/silver/models.yml). Arguments to
+generic tests should be nested under the `arguments` property.
+[0m13:24:50.505858 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'b4ab43e3-fc43-42a0-b12f-8fef49e5ff01', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7eda03f55540>]}
+[0m13:24:50.603861 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Compilation Error
+  Model 'model.idx_sector_rotation.sector_rotation' (models/gold/sector_rotation.sql) depends on a source named 'raw.sector_metrics' which was not found
+[0m13:24:50.605376 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m13:24:50.607263 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 1.5817578, "process_in_blocks": "496", "process_kernel_time": 0.303379, "process_mem_max_rss": "122188", "process_out_blocks": "0", "process_user_time": 2.541352}
+[0m13:24:50.608261 [debug] [MainThread]: Command `dbt run` failed at 13:24:50.608139 after 1.58 seconds
+[0m13:24:50.609185 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7eda45dd6d10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7eda446e8940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7eda446ea740>]}
+[0m13:24:50.610118 [debug] [MainThread]: Flushing usage events
+[0m13:24:51.846404 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:28:54.967176 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b01cfec2e30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b01ce6d5e40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b01ce6d5de0>]}
+
+
+============================== 13:28:54.972887 | 3d11365a-2325-4765-92a9-6d78fd3553c5 ==============================
+[0m13:28:54.972887 [info ] [MainThread]: Running with dbt=1.12.0-b3
+[0m13:28:54.974219 [debug] [MainThread]: running dbt with arguments {'indirect_selection': 'eager', 'version_check': 'True', 'maximum_seed_size_mib': '1', 'fail_fast': 'False', 'invocation_command': 'dbt run --project-dir /opt/airflow/dbt_project --profiles-dir /opt/airflow/dbt_project', 'use_colors': 'True', 'log_path': '/opt/airflow/dbt_project/logs', 'printer_width': '80', 'warn_error': 'None', 'log_format': 'default', 'profiles_dir': '/opt/airflow/dbt_project', 'target_path': 'None', 'partial_parse': 'True', 'cache_selected_only': 'False', 'no_print': 'None', 'static_parser': 'True', 'write_json': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'quiet': 'False', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'send_anonymous_usage_stats': 'True', 'debug': 'False', 'empty': 'False'}
+[0m13:28:55.135689 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '3d11365a-2325-4765-92a9-6d78fd3553c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b01cf398ca0>]}
+[0m13:28:55.237462 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '3d11365a-2325-4765-92a9-6d78fd3553c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b01cfbc47c0>]}
+[0m13:28:55.240209 [info ] [MainThread]: Registered adapter: postgres=1.10.1
+[0m13:28:55.325424 [debug] [MainThread]: checksum: 7e549073af6bc05033fb11f06bb3ab22b0ba2ed35564cb8e246fefe3ef960728, vars: {}, profile: idx_warehouse, target: dev, version: 1.12.0b3
+[0m13:28:55.329703 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m13:28:55.331323 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '3d11365a-2325-4765-92a9-6d78fd3553c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b01cd7a7460>]}
+[0m13:28:56.538287 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `accepted_value` defined on 'sector_rotation'
+in package 'idx_sector_rotation' (models/silver/models.yml). Arguments to
+generic tests should be nested under the `arguments` property.
+[0m13:28:56.539740 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '3d11365a-2325-4765-92a9-6d78fd3553c5', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b01cc71c760>]}
+[0m13:28:56.581088 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Compilation Error
+  Model 'model.idx_sector_rotation.sector_rotation' (models/gold/sector_rotation.sql) depends on a source named 'raw.sector_metrics' which was not found
+[0m13:28:56.582770 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m13:28:56.584602 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 1.6944613, "process_in_blocks": "0", "process_kernel_time": 0.337216, "process_mem_max_rss": "121860", "process_out_blocks": "0", "process_user_time": 2.732765}
+[0m13:28:56.585652 [debug] [MainThread]: Command `dbt run` failed at 13:28:56.585531 after 1.70 seconds
+[0m13:28:56.586671 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b01cfec2e30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b01cc2772e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b01cc267250>]}
+[0m13:28:56.587448 [debug] [MainThread]: Flushing usage events
+[0m13:28:57.768753 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:30:37.335758 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78e02226ee60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78e020c49ea0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78e020c49e40>]}
+
+
+============================== 13:30:37.342711 | 5d730bee-754a-4ffb-85b8-86f637e4edd0 ==============================
+[0m13:30:37.342711 [info ] [MainThread]: Running with dbt=1.12.0-b3
+[0m13:30:37.344510 [debug] [MainThread]: running dbt with arguments {'fail_fast': 'False', 'use_colors': 'True', 'cache_selected_only': 'False', 'quiet': 'False', 'printer_width': '80', 'profiles_dir': '/opt/airflow/dbt_project', 'introspect': 'True', 'log_format': 'default', 'log_path': '/opt/airflow/dbt_project/logs', 'target_path': 'None', 'invocation_command': 'dbt run --project-dir /opt/airflow/dbt_project --profiles-dir /opt/airflow/dbt_project', 'warn_error': 'None', 'use_experimental_parser': 'False', 'maximum_seed_size_mib': '1', 'send_anonymous_usage_stats': 'True', 'write_json': 'True', 'log_cache_events': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'version_check': 'True', 'partial_parse': 'True', 'empty': 'False', 'debug': 'False', 'no_print': 'None', 'indirect_selection': 'eager'}
+[0m13:30:37.501974 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '5d730bee-754a-4ffb-85b8-86f637e4edd0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78e020bb4d00>]}
+[0m13:30:37.604273 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '5d730bee-754a-4ffb-85b8-86f637e4edd0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78e024da9180>]}
+[0m13:30:37.608056 [info ] [MainThread]: Registered adapter: postgres=1.10.1
+[0m13:30:37.690713 [debug] [MainThread]: checksum: 7e549073af6bc05033fb11f06bb3ab22b0ba2ed35564cb8e246fefe3ef960728, vars: {}, profile: idx_warehouse, target: dev, version: 1.12.0b3
+[0m13:30:37.694319 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m13:30:37.695592 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '5d730bee-754a-4ffb-85b8-86f637e4edd0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78e01fb6cf70>]}
+[0m13:30:38.799342 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `accepted_value` defined on 'sector_rotation'
+in package 'idx_sector_rotation' (models/models.yml). Arguments to generic tests
+should be nested under the `arguments` property.
+[0m13:30:38.800789 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '5d730bee-754a-4ffb-85b8-86f637e4edd0', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78e01fb00dc0>]}
+[0m13:30:38.911795 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Compilation Error
+  Model 'model.idx_sector_rotation.sector_rotation' (models/gold/sector_rotation.sql) depends on a source named 'raw.sector_metrics' which was not found
+[0m13:30:38.913049 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m13:30:38.914271 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 1.6545445, "process_in_blocks": "0", "process_kernel_time": 0.289759, "process_mem_max_rss": "122376", "process_out_blocks": "0", "process_user_time": 2.660521}
+[0m13:30:38.915129 [debug] [MainThread]: Command `dbt run` failed at 13:30:38.915010 after 1.66 seconds
+[0m13:30:38.915981 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78e02226ee60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78e01c6673d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78e01c6030d0>]}
+[0m13:30:38.916850 [debug] [MainThread]: Flushing usage events
+[0m13:30:40.172421 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:39:19.818659 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c28727b6dd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c2871269e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c2871269db0>]}
+
+
+============================== 13:39:19.825085 | a4bb8668-99c0-4dd4-9f6a-418a00c9e740 ==============================
+[0m13:39:19.825085 [info ] [MainThread]: Running with dbt=1.12.0-b3
+[0m13:39:19.826346 [debug] [MainThread]: running dbt with arguments {'log_format': 'default', 'profiles_dir': '/opt/airflow/dbt_project', 'log_path': '/opt/airflow/dbt_project/logs', 'partial_parse': 'True', 'write_json': 'True', 'introspect': 'True', 'empty': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'maximum_seed_size_mib': '1', 'no_print': 'None', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'printer_width': '80', 'use_experimental_parser': 'False', 'static_parser': 'True', 'invocation_command': 'dbt run --project-dir /opt/airflow/dbt_project --profiles-dir /opt/airflow/dbt_project', 'target_path': 'None', 'cache_selected_only': 'False', 'log_cache_events': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_colors': 'True', 'debug': 'False', 'quiet': 'False', 'indirect_selection': 'eager'}
+[0m13:39:19.990500 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'a4bb8668-99c0-4dd4-9f6a-418a00c9e740', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c28711fba60>]}
+[0m13:39:20.092193 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'a4bb8668-99c0-4dd4-9f6a-418a00c9e740', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c2870994d90>]}
+[0m13:39:20.094354 [info ] [MainThread]: Registered adapter: postgres=1.10.1
+[0m13:39:20.183183 [debug] [MainThread]: checksum: 7e549073af6bc05033fb11f06bb3ab22b0ba2ed35564cb8e246fefe3ef960728, vars: {}, profile: idx_warehouse, target: dev, version: 1.12.0b3
+[0m13:39:20.187459 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m13:39:20.188908 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'a4bb8668-99c0-4dd4-9f6a-418a00c9e740', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c287016b520>]}
+[0m13:39:21.319584 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `accepted_value` defined on 'sector_rotation'
+in package 'idx_sector_rotation' (models/models.yml). Arguments to generic tests
+should be nested under the `arguments` property.
+[0m13:39:21.320823 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'a4bb8668-99c0-4dd4-9f6a-418a00c9e740', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c286f1328c0>]}
+[0m13:39:21.432510 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Compilation Error
+  Model 'model.idx_sector_rotation.sector_rotation' (models/gold/sector_rotation.sql) depends on a source named 'raw.sector_metrics' which was not found
+[0m13:39:21.433912 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m13:39:21.435559 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 1.6939992, "process_in_blocks": "0", "process_kernel_time": 0.313172, "process_mem_max_rss": "121952", "process_out_blocks": "0", "process_user_time": 2.681811}
+[0m13:39:21.437241 [debug] [MainThread]: Command `dbt run` failed at 13:39:21.437039 after 1.70 seconds
+[0m13:39:21.438353 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c28727b6dd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c286f16c310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c286f16d900>]}
+[0m13:39:21.439305 [debug] [MainThread]: Flushing usage events
+[0m13:39:22.627496 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m05:18:28.284810 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7989b7e4edd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7989b681de10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7989b681ddb0>]}
+
+
+============================== 05:18:28.297940 | 82e3f676-9613-43e9-a29f-d0c395bc1bed ==============================
+[0m05:18:28.297940 [info ] [MainThread]: Running with dbt=1.12.0-b3
+[0m05:18:28.300597 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'empty': 'False', 'warn_error': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'quiet': 'False', 'cache_selected_only': 'False', 'log_format': 'default', 'target_path': 'None', 'write_json': 'True', 'debug': 'False', 'indirect_selection': 'eager', 'fail_fast': 'False', 'use_experimental_parser': 'False', 'introspect': 'True', 'profiles_dir': '/opt/airflow/dbt_project', 'version_check': 'True', 'log_cache_events': 'False', 'use_colors': 'True', 'maximum_seed_size_mib': '1', 'send_anonymous_usage_stats': 'True', 'invocation_command': 'dbt run --project-dir /opt/airflow/dbt_project --profiles-dir /opt/airflow/dbt_project', 'partial_parse': 'True', 'log_path': '/opt/airflow/dbt_project/logs', 'static_parser': 'True'}
+[0m05:18:28.657101 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '82e3f676-9613-43e9-a29f-d0c395bc1bed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7989b67afa60>]}
+[0m05:18:28.782227 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '82e3f676-9613-43e9-a29f-d0c395bc1bed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7989b5fa0d90>]}
+[0m05:18:28.799921 [info ] [MainThread]: Registered adapter: postgres=1.10.1
+[0m05:18:28.924477 [debug] [MainThread]: checksum: 7e549073af6bc05033fb11f06bb3ab22b0ba2ed35564cb8e246fefe3ef960728, vars: {}, profile: idx_warehouse, target: dev, version: 1.12.0b3
+[0m05:18:28.931611 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m05:18:28.933308 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '82e3f676-9613-43e9-a29f-d0c395bc1bed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7989b576f520>]}
+[0m05:18:34.974967 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `accepted_value` defined on 'sector_rotation'
+in package 'idx_sector_rotation' (models/models.yml). Arguments to generic tests
+should be nested under the `arguments` property.
+[0m05:18:34.977492 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '82e3f676-9613-43e9-a29f-d0c395bc1bed', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7989b473e8c0>]}
+[0m05:18:35.263033 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '82e3f676-9613-43e9-a29f-d0c395bc1bed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7989b4b54b20>]}
+[0m05:18:35.437679 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m05:18:35.452243 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m05:18:35.495540 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt_project/target/osi_document.json
+[0m05:18:35.530928 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '82e3f676-9613-43e9-a29f-d0c395bc1bed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7989b5b9af50>]}
+[0m05:18:35.533173 [info ] [MainThread]: Found 5 models, 10 data tests, 4 sources, 475 macros
+[0m05:18:35.535133 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '82e3f676-9613-43e9-a29f-d0c395bc1bed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7989b5b98610>]}
+[0m05:18:35.539073 [info ] [MainThread]: 
+[0m05:18:35.540768 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m05:18:35.542747 [info ] [MainThread]: 
+[0m05:18:35.544805 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m05:18:35.551620 [debug] [ThreadPool]: Acquiring new postgres connection 'list_idx_warehouse'
+[0m05:18:35.552826 [debug] [ThreadPool]: Acquiring new postgres connection 'list_idx_warehouse'
+[0m05:18:35.629421 [debug] [ThreadPool]: Using postgres connection "list_idx_warehouse"
+[0m05:18:35.629971 [debug] [ThreadPool]: Using postgres connection "list_idx_warehouse"
+[0m05:18:35.631368 [debug] [ThreadPool]: On list_idx_warehouse: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "connection_name": "list_idx_warehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m05:18:35.632922 [debug] [ThreadPool]: On list_idx_warehouse: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "connection_name": "list_idx_warehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m05:18:35.635016 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m05:18:35.636622 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m05:18:35.699332 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.063 seconds
+[0m05:18:35.699958 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.065 seconds
+[0m05:18:35.703223 [debug] [ThreadPool]: On list_idx_warehouse: Close
+[0m05:18:35.706633 [debug] [ThreadPool]: On list_idx_warehouse: Close
+[0m05:18:35.710684 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_idx_warehouse, now create_idx_warehouse_gold_gold)
+[0m05:18:35.711305 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_idx_warehouse, now create_idx_warehouse_gold_silver)
+[0m05:18:35.712829 [debug] [ThreadPool]: Creating schema "database: "idx_warehouse"
+schema: "gold_gold"
+"
+[0m05:18:35.714829 [debug] [ThreadPool]: Creating schema "database: "idx_warehouse"
+schema: "gold_silver"
+"
+[0m05:18:35.723464 [debug] [ThreadPool]: Using postgres connection "create_idx_warehouse_gold_gold"
+[0m05:18:35.727500 [debug] [ThreadPool]: Using postgres connection "create_idx_warehouse_gold_silver"
+[0m05:18:35.729689 [debug] [ThreadPool]: On create_idx_warehouse_gold_gold: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "connection_name": "create_idx_warehouse_gold_gold"} */
+create schema if not exists "gold_gold"
+[0m05:18:35.731307 [debug] [ThreadPool]: On create_idx_warehouse_gold_silver: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "connection_name": "create_idx_warehouse_gold_silver"} */
+create schema if not exists "gold_silver"
+[0m05:18:35.733166 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m05:18:35.735246 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m05:18:35.749457 [debug] [ThreadPool]: SQL status: CREATE SCHEMA in 0.014 seconds
+[0m05:18:35.750089 [debug] [ThreadPool]: SQL status: CREATE SCHEMA in 0.017 seconds
+[0m05:18:35.752469 [debug] [ThreadPool]: On create_idx_warehouse_gold_silver: COMMIT
+[0m05:18:35.754816 [debug] [ThreadPool]: On create_idx_warehouse_gold_gold: COMMIT
+[0m05:18:35.756963 [debug] [ThreadPool]: Using postgres connection "create_idx_warehouse_gold_silver"
+[0m05:18:35.758992 [debug] [ThreadPool]: Using postgres connection "create_idx_warehouse_gold_gold"
+[0m05:18:35.760589 [debug] [ThreadPool]: On create_idx_warehouse_gold_silver: COMMIT
+[0m05:18:35.762277 [debug] [ThreadPool]: On create_idx_warehouse_gold_gold: COMMIT
+[0m05:18:35.767550 [debug] [ThreadPool]: SQL status: COMMIT in 0.003 seconds
+[0m05:18:35.769683 [debug] [ThreadPool]: On create_idx_warehouse_gold_silver: Close
+[0m05:18:35.770281 [debug] [ThreadPool]: SQL status: COMMIT in 0.005 seconds
+[0m05:18:35.775672 [debug] [ThreadPool]: On create_idx_warehouse_gold_gold: Close
+[0m05:18:35.779031 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_idx_warehouse_gold_gold, now list_idx_warehouse_gold_gold)
+[0m05:18:35.779730 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_idx_warehouse_gold_silver, now list_idx_warehouse_gold_silver)
+[0m05:18:35.787612 [debug] [ThreadPool]: Using postgres connection "list_idx_warehouse_gold_gold"
+[0m05:18:35.791323 [debug] [ThreadPool]: Using postgres connection "list_idx_warehouse_gold_silver"
+[0m05:18:35.793175 [debug] [ThreadPool]: On list_idx_warehouse_gold_gold: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "connection_name": "list_idx_warehouse_gold_gold"} */
+select
+      'idx_warehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'gold_gold'
+    union all
+    select
+      'idx_warehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'gold_gold'
+    union all
+    select
+      'idx_warehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'gold_gold'
+  
+[0m05:18:35.794742 [debug] [ThreadPool]: On list_idx_warehouse_gold_silver: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "connection_name": "list_idx_warehouse_gold_silver"} */
+select
+      'idx_warehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'gold_silver'
+    union all
+    select
+      'idx_warehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'gold_silver'
+    union all
+    select
+      'idx_warehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'gold_silver'
+  
+[0m05:18:35.796400 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m05:18:35.798385 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m05:18:35.824314 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.028 seconds
+[0m05:18:35.824886 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.026 seconds
+[0m05:18:35.827691 [debug] [ThreadPool]: On list_idx_warehouse_gold_gold: ROLLBACK
+[0m05:18:35.830710 [debug] [ThreadPool]: On list_idx_warehouse_gold_silver: ROLLBACK
+[0m05:18:35.833330 [debug] [ThreadPool]: On list_idx_warehouse_gold_gold: Close
+[0m05:18:35.835303 [debug] [ThreadPool]: On list_idx_warehouse_gold_silver: Close
+[0m05:18:35.842899 [debug] [MainThread]: Using postgres connection "master"
+[0m05:18:35.844755 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m05:18:35.846124 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m05:18:35.867999 [debug] [MainThread]: SQL status: SELECT 0 in 0.022 seconds
+[0m05:18:35.871309 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '82e3f676-9613-43e9-a29f-d0c395bc1bed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7989b5b9b490>]}
+[0m05:18:35.873001 [debug] [MainThread]: On master: ROLLBACK
+[0m05:18:35.875220 [debug] [MainThread]: On master: COMMIT
+[0m05:18:35.876890 [debug] [MainThread]: Using postgres connection "master"
+[0m05:18:35.878796 [debug] [MainThread]: On master: COMMIT
+[0m05:18:35.880985 [debug] [MainThread]: SQL status: COMMIT in 0.001 seconds
+[0m05:18:35.883053 [debug] [MainThread]: On master: Close
+[0m05:18:35.893710 [debug] [Thread-1 (]: Began running node model.idx_sector_rotation.stg_benchmark
+[0m05:18:35.894463 [debug] [Thread-2 (]: Began running node model.idx_sector_rotation.stg_ticker_metrics
+[0m05:18:35.896149 [info ] [Thread-1 (]: 1 of 5 START sql view model gold_silver.stg_benchmark .......................... [RUN]
+[0m05:18:35.898290 [info ] [Thread-2 (]: 2 of 5 START sql view model gold_silver.stg_ticker_metrics ..................... [RUN]
+[0m05:18:35.900331 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_idx_warehouse_gold_silver, now model.idx_sector_rotation.stg_benchmark)
+[0m05:18:35.902428 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_idx_warehouse_gold_gold, now model.idx_sector_rotation.stg_ticker_metrics)
+[0m05:18:35.904630 [debug] [Thread-1 (]: Began compiling node model.idx_sector_rotation.stg_benchmark
+[0m05:18:35.906663 [debug] [Thread-2 (]: Began compiling node model.idx_sector_rotation.stg_ticker_metrics
+[0m05:18:35.915931 [debug] [Thread-1 (]: Writing injected SQL for node "model.idx_sector_rotation.stg_benchmark"
+[0m05:18:35.919820 [debug] [Thread-2 (]: Writing injected SQL for node "model.idx_sector_rotation.stg_ticker_metrics"
+[0m05:18:35.961992 [debug] [Thread-1 (]: Began executing node model.idx_sector_rotation.stg_benchmark
+[0m05:18:35.970917 [debug] [Thread-2 (]: Began executing node model.idx_sector_rotation.stg_ticker_metrics
+[0m05:18:36.009235 [debug] [Thread-1 (]: Writing runtime sql for node "model.idx_sector_rotation.stg_benchmark"
+[0m05:18:36.011881 [debug] [Thread-2 (]: Writing runtime sql for node "model.idx_sector_rotation.stg_ticker_metrics"
+[0m05:18:36.040772 [debug] [Thread-1 (]: Using postgres connection "model.idx_sector_rotation.stg_benchmark"
+[0m05:18:36.043107 [debug] [Thread-1 (]: On model.idx_sector_rotation.stg_benchmark: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "node_id": "model.idx_sector_rotation.stg_benchmark"} */
+
+  create view "idx_warehouse"."gold_silver"."stg_benchmark__dbt_tmp"
+    
+    
+  as (
+    with source as (
+  select * from "idx_warehouse"."bronze"."ihsg_benchmark"
+)
+
+select
+  trade_date,
+  week_label,
+  close_price,
+  daily_return
+from source
+where trade_date is not null and daily_return is not null
+  );
+[0m05:18:36.045236 [debug] [Thread-2 (]: Using postgres connection "model.idx_sector_rotation.stg_ticker_metrics"
+[0m05:18:36.045810 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m05:18:36.047291 [debug] [Thread-2 (]: On model.idx_sector_rotation.stg_ticker_metrics: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "node_id": "model.idx_sector_rotation.stg_ticker_metrics"} */
+
+  create view "idx_warehouse"."gold_silver"."stg_ticker_metrics__dbt_tmp"
+    
+    
+  as (
+    with source as (
+  select * from "idx_warehouse"."silver"."ticker_metrics_daily"
+),
+
+cleaned as (
+  select
+    trade_date,
+    week_label,
+    sector,
+    ticker,
+    nullif(price_momentum, 0) as price_momentum,
+    nullif(sharpe_ratio, 0) as sharpe_ratio,
+    nullif(rolling_beta, 0) as rolling_beta,
+    max_drawdown,
+    computed_at
+  from source
+  where trade_date is not null and ticker is not null
+)
+
+select * from cleaned
+  );
+[0m05:18:36.054678 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m05:18:36.084670 [debug] [Thread-2 (]: SQL status: CREATE VIEW in 0.030 seconds
+[0m05:18:36.085850 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.040 seconds
+[0m05:18:36.095029 [debug] [Thread-2 (]: Using postgres connection "model.idx_sector_rotation.stg_ticker_metrics"
+[0m05:18:36.099439 [debug] [Thread-1 (]: Using postgres connection "model.idx_sector_rotation.stg_benchmark"
+[0m05:18:36.101829 [debug] [Thread-2 (]: On model.idx_sector_rotation.stg_ticker_metrics: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "node_id": "model.idx_sector_rotation.stg_ticker_metrics"} */
+alter table "idx_warehouse"."gold_silver"."stg_ticker_metrics__dbt_tmp" rename to "stg_ticker_metrics"
+[0m05:18:36.103651 [debug] [Thread-1 (]: On model.idx_sector_rotation.stg_benchmark: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "node_id": "model.idx_sector_rotation.stg_benchmark"} */
+alter table "idx_warehouse"."gold_silver"."stg_benchmark__dbt_tmp" rename to "stg_benchmark"
+[0m05:18:36.107677 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m05:18:36.109640 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m05:18:36.129551 [debug] [Thread-2 (]: On model.idx_sector_rotation.stg_ticker_metrics: COMMIT
+[0m05:18:36.131677 [debug] [Thread-1 (]: On model.idx_sector_rotation.stg_benchmark: COMMIT
+[0m05:18:36.134501 [debug] [Thread-2 (]: Using postgres connection "model.idx_sector_rotation.stg_ticker_metrics"
+[0m05:18:36.136669 [debug] [Thread-1 (]: Using postgres connection "model.idx_sector_rotation.stg_benchmark"
+[0m05:18:36.138837 [debug] [Thread-2 (]: On model.idx_sector_rotation.stg_ticker_metrics: COMMIT
+[0m05:18:36.140479 [debug] [Thread-1 (]: On model.idx_sector_rotation.stg_benchmark: COMMIT
+[0m05:18:36.146996 [debug] [Thread-2 (]: SQL status: COMMIT in 0.005 seconds
+[0m05:18:36.155077 [debug] [Thread-1 (]: SQL status: COMMIT in 0.011 seconds
+[0m05:18:36.159364 [debug] [Thread-2 (]: Applying DROP to: "idx_warehouse"."gold_silver"."stg_ticker_metrics__dbt_backup"
+[0m05:18:36.164201 [debug] [Thread-1 (]: Applying DROP to: "idx_warehouse"."gold_silver"."stg_benchmark__dbt_backup"
+[0m05:18:36.169811 [debug] [Thread-2 (]: Using postgres connection "model.idx_sector_rotation.stg_ticker_metrics"
+[0m05:18:36.172184 [debug] [Thread-1 (]: Using postgres connection "model.idx_sector_rotation.stg_benchmark"
+[0m05:18:36.173931 [debug] [Thread-2 (]: On model.idx_sector_rotation.stg_ticker_metrics: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "node_id": "model.idx_sector_rotation.stg_ticker_metrics"} */
+drop view if exists "idx_warehouse"."gold_silver"."stg_ticker_metrics__dbt_backup" cascade
+[0m05:18:36.175737 [debug] [Thread-1 (]: On model.idx_sector_rotation.stg_benchmark: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "node_id": "model.idx_sector_rotation.stg_benchmark"} */
+drop view if exists "idx_warehouse"."gold_silver"."stg_benchmark__dbt_backup" cascade
+[0m05:18:36.178374 [debug] [Thread-2 (]: SQL status: DROP VIEW in 0.001 seconds
+[0m05:18:36.179133 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.000 seconds
+[0m05:18:36.184136 [debug] [Thread-2 (]: On model.idx_sector_rotation.stg_ticker_metrics: Close
+[0m05:18:36.187128 [debug] [Thread-1 (]: On model.idx_sector_rotation.stg_benchmark: Close
+[0m05:18:36.193241 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '82e3f676-9613-43e9-a29f-d0c395bc1bed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7989b0b03730>]}
+[0m05:18:36.194178 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '82e3f676-9613-43e9-a29f-d0c395bc1bed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7989b0bd84c0>]}
+[0m05:18:36.195895 [info ] [Thread-2 (]: 2 of 5 OK created sql view model gold_silver.stg_ticker_metrics ................ [[32mCREATE VIEW[0m in 0.29s]
+[0m05:18:36.197855 [info ] [Thread-1 (]: 1 of 5 OK created sql view model gold_silver.stg_benchmark ..................... [[32mCREATE VIEW[0m in 0.29s]
+[0m05:18:36.199858 [debug] [Thread-2 (]: Finished running node model.idx_sector_rotation.stg_ticker_metrics
+[0m05:18:36.201396 [debug] [Thread-1 (]: Finished running node model.idx_sector_rotation.stg_benchmark
+[0m05:18:36.204564 [debug] [Thread-4 (]: Began running node model.idx_sector_rotation.sector_rotation
+[0m05:18:36.208143 [info ] [Thread-4 (]: 3 of 5 START sql incremental model gold_gold.sector_rotation ................... [RUN]
+[0m05:18:36.210706 [debug] [Thread-4 (]: Acquiring new postgres connection 'model.idx_sector_rotation.sector_rotation'
+[0m05:18:36.212524 [debug] [Thread-4 (]: Began compiling node model.idx_sector_rotation.sector_rotation
+[0m05:18:36.220511 [debug] [Thread-4 (]: Writing injected SQL for node "model.idx_sector_rotation.sector_rotation"
+[0m05:18:36.260818 [debug] [Thread-4 (]: Began executing node model.idx_sector_rotation.sector_rotation
+[0m05:18:36.305771 [debug] [Thread-4 (]: Writing runtime sql for node "model.idx_sector_rotation.sector_rotation"
+[0m05:18:36.330682 [debug] [Thread-4 (]: Using postgres connection "model.idx_sector_rotation.sector_rotation"
+[0m05:18:36.332399 [debug] [Thread-4 (]: On model.idx_sector_rotation.sector_rotation: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "node_id": "model.idx_sector_rotation.sector_rotation"} */
+
+      
+  
+    
+
+  create  table "idx_warehouse"."gold_gold"."sector_rotation"
+  
+  
+    as
+  
+  (
+    
+
+with ticker_metrics as (
+  select * from "idx_warehouse"."gold_silver"."stg_ticker_metrics"
+
+  
+),
+
+sector_agg as (
+  select
+    week_label,
+    sector,
+    avg(price_momentum) as avg_price_momentum,
+    avg(sharpe_ratio) as avg_sharpe_ratio,
+    avg(rolling_beta) as avg_rolling_beta,
+    avg(max_drawdown) as avg_max_drawdown
+  from ticker_metrics
+  group by week_label, sector
+),
+
+weekly_return as (
+  select
+    week_label,
+    sector,
+    avg(daily_return) * 5 as avg_weekly_return
+  from "idx_warehouse"."bronze"."sector_metrics"
+
+  
+
+  group by week_label, sector
+),
+
+scored as (
+  select
+    s.week_label,
+    s.sector,
+    s.avg_price_momentum,
+    s.avg_sharpe_ratio,
+    s.avg_rolling_beta,
+    s.avg_max_drawdown,
+    w.avg_weekly_return,
+    (
+      percent_rank() over (partition by s.week_label order by s.avg_price_momentum asc nulls last)
+      + percent_rank() over (partition by s.week_label order by s.avg_sharpe_ratio asc nulls last)
+      + percent_rank() over (partition by s.week_label order by s.avg_rolling_beta desc nulls last)
+      + percent_rank() over (partition by s.week_label order by s.avg_max_drawdown desc nulls last)
+    ) / 4.0 as momentum_score
+  from sector_agg s
+  left join weekly_return w
+    on s.week_label = w.week_label and s.sector = w.sector
+),
+
+ranked as (
+  select
+    week_label,
+    sector,
+    avg_price_momentum,
+    avg_sharpe_ratio,
+    avg_rolling_beta,
+    avg_max_drawdown,
+    avg_weekly_return,
+    momentum_score,
+    rank() over (partition by week_label order by momentum_score desc) as sector_rank
+  from scored
+)
+
+select
+  week_label,
+  sector,
+  avg_price_momentum,
+  avg_sharpe_ratio,
+  avg_rolling_beta,
+  avg_max_drawdown,
+  avg_weekly_return,
+  momentum_score,
+  sector_rank,
+  case
+    when sector_rank <= 3 then 'BUY'
+    when sector_rank <= 7 then 'HOLD'
+    else 'SELL'
+  end as signal,
+  now() as updated_at
+from ranked
+  );
+  
+  
+[0m05:18:36.334022 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m05:18:36.455136 [debug] [Thread-4 (]: SQL status: SELECT 11 in 0.121 seconds
+[0m05:18:36.461629 [debug] [Thread-4 (]: On model.idx_sector_rotation.sector_rotation: COMMIT
+[0m05:18:36.463585 [debug] [Thread-4 (]: Using postgres connection "model.idx_sector_rotation.sector_rotation"
+[0m05:18:36.465191 [debug] [Thread-4 (]: On model.idx_sector_rotation.sector_rotation: COMMIT
+[0m05:18:36.470556 [debug] [Thread-4 (]: SQL status: COMMIT in 0.004 seconds
+[0m05:18:36.473448 [debug] [Thread-4 (]: On model.idx_sector_rotation.sector_rotation: Close
+[0m05:18:36.475392 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '82e3f676-9613-43e9-a29f-d0c395bc1bed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7989b4bdd030>]}
+[0m05:18:36.477381 [info ] [Thread-4 (]: 3 of 5 OK created sql incremental model gold_gold.sector_rotation .............. [[32mSELECT 11[0m in 0.27s]
+[0m05:18:36.479117 [debug] [Thread-4 (]: Finished running node model.idx_sector_rotation.sector_rotation
+[0m05:18:36.481571 [debug] [Thread-2 (]: Began running node model.idx_sector_rotation.rotation_history
+[0m05:18:36.482507 [debug] [Thread-3 (]: Began running node model.idx_sector_rotation.sector_ranking
+[0m05:18:36.483948 [info ] [Thread-2 (]: 4 of 5 START sql view model gold_gold.rotation_history ......................... [RUN]
+[0m05:18:36.485864 [info ] [Thread-3 (]: 5 of 5 START sql view model gold_gold.sector_ranking ........................... [RUN]
+[0m05:18:36.487991 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.idx_sector_rotation.stg_ticker_metrics, now model.idx_sector_rotation.rotation_history)
+[0m05:18:36.490006 [debug] [Thread-3 (]: Acquiring new postgres connection 'model.idx_sector_rotation.sector_ranking'
+[0m05:18:36.491363 [debug] [Thread-2 (]: Began compiling node model.idx_sector_rotation.rotation_history
+[0m05:18:36.493214 [debug] [Thread-3 (]: Began compiling node model.idx_sector_rotation.sector_ranking
+[0m05:18:36.500280 [debug] [Thread-2 (]: Writing injected SQL for node "model.idx_sector_rotation.rotation_history"
+[0m05:18:36.505495 [debug] [Thread-3 (]: Writing injected SQL for node "model.idx_sector_rotation.sector_ranking"
+[0m05:18:36.533606 [debug] [Thread-2 (]: Began executing node model.idx_sector_rotation.rotation_history
+[0m05:18:36.543026 [debug] [Thread-2 (]: Writing runtime sql for node "model.idx_sector_rotation.rotation_history"
+[0m05:18:36.543608 [debug] [Thread-3 (]: Began executing node model.idx_sector_rotation.sector_ranking
+[0m05:18:36.550693 [debug] [Thread-3 (]: Writing runtime sql for node "model.idx_sector_rotation.sector_ranking"
+[0m05:18:36.562070 [debug] [Thread-2 (]: Using postgres connection "model.idx_sector_rotation.rotation_history"
+[0m05:18:36.564452 [debug] [Thread-2 (]: On model.idx_sector_rotation.rotation_history: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "node_id": "model.idx_sector_rotation.rotation_history"} */
+
+  create view "idx_warehouse"."gold_gold"."rotation_history__dbt_tmp"
+    
+    
+  as (
+    
+
+select
+  week_label,
+  sector,
+  avg_weekly_return,
+  momentum_score,
+  sector_rank
+from "idx_warehouse"."gold_gold"."sector_rotation"
+order by week_label desc, sector_rank asc
+  );
+[0m05:18:36.566273 [debug] [Thread-3 (]: Using postgres connection "model.idx_sector_rotation.sector_ranking"
+[0m05:18:36.567053 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m05:18:36.569117 [debug] [Thread-3 (]: On model.idx_sector_rotation.sector_ranking: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "node_id": "model.idx_sector_rotation.sector_ranking"} */
+
+  create view "idx_warehouse"."gold_gold"."sector_ranking__dbt_tmp"
+    
+    
+  as (
+    
+
+select
+  week_label,
+  sector,
+  momentum_score,
+  sector_rank,
+  signal
+from "idx_warehouse"."gold_gold"."sector_rotation"
+  );
+[0m05:18:36.572790 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m05:18:36.580253 [debug] [Thread-2 (]: SQL status: CREATE VIEW in 0.013 seconds
+[0m05:18:36.585970 [debug] [Thread-2 (]: Using postgres connection "model.idx_sector_rotation.rotation_history"
+[0m05:18:36.587835 [debug] [Thread-2 (]: On model.idx_sector_rotation.rotation_history: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "node_id": "model.idx_sector_rotation.rotation_history"} */
+alter table "idx_warehouse"."gold_gold"."rotation_history__dbt_tmp" rename to "rotation_history"
+[0m05:18:36.590425 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m05:18:36.593849 [debug] [Thread-2 (]: On model.idx_sector_rotation.rotation_history: COMMIT
+[0m05:18:36.596219 [debug] [Thread-2 (]: Using postgres connection "model.idx_sector_rotation.rotation_history"
+[0m05:18:36.597022 [debug] [Thread-3 (]: SQL status: CREATE VIEW in 0.024 seconds
+[0m05:18:36.598576 [debug] [Thread-2 (]: On model.idx_sector_rotation.rotation_history: COMMIT
+[0m05:18:36.603639 [debug] [Thread-3 (]: Using postgres connection "model.idx_sector_rotation.sector_ranking"
+[0m05:18:36.607199 [debug] [Thread-3 (]: On model.idx_sector_rotation.sector_ranking: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "node_id": "model.idx_sector_rotation.sector_ranking"} */
+alter table "idx_warehouse"."gold_gold"."sector_ranking__dbt_tmp" rename to "sector_ranking"
+[0m05:18:36.609384 [debug] [Thread-2 (]: SQL status: COMMIT in 0.004 seconds
+[0m05:18:36.609962 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m05:18:36.613850 [debug] [Thread-2 (]: Applying DROP to: "idx_warehouse"."gold_gold"."rotation_history__dbt_backup"
+[0m05:18:36.616400 [debug] [Thread-3 (]: On model.idx_sector_rotation.sector_ranking: COMMIT
+[0m05:18:36.619525 [debug] [Thread-2 (]: Using postgres connection "model.idx_sector_rotation.rotation_history"
+[0m05:18:36.621627 [debug] [Thread-3 (]: Using postgres connection "model.idx_sector_rotation.sector_ranking"
+[0m05:18:36.623595 [debug] [Thread-2 (]: On model.idx_sector_rotation.rotation_history: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "node_id": "model.idx_sector_rotation.rotation_history"} */
+drop view if exists "idx_warehouse"."gold_gold"."rotation_history__dbt_backup" cascade
+[0m05:18:36.625196 [debug] [Thread-3 (]: On model.idx_sector_rotation.sector_ranking: COMMIT
+[0m05:18:36.627551 [debug] [Thread-2 (]: SQL status: DROP VIEW in 0.001 seconds
+[0m05:18:36.631838 [debug] [Thread-2 (]: On model.idx_sector_rotation.rotation_history: Close
+[0m05:18:36.632803 [debug] [Thread-3 (]: SQL status: COMMIT in 0.004 seconds
+[0m05:18:36.634715 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '82e3f676-9613-43e9-a29f-d0c395bc1bed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7989b0b03880>]}
+[0m05:18:36.639258 [debug] [Thread-3 (]: Applying DROP to: "idx_warehouse"."gold_gold"."sector_ranking__dbt_backup"
+[0m05:18:36.642114 [info ] [Thread-2 (]: 4 of 5 OK created sql view model gold_gold.rotation_history .................... [[32mCREATE VIEW[0m in 0.15s]
+[0m05:18:36.644420 [debug] [Thread-3 (]: Using postgres connection "model.idx_sector_rotation.sector_ranking"
+[0m05:18:36.646669 [debug] [Thread-2 (]: Finished running node model.idx_sector_rotation.rotation_history
+[0m05:18:36.648316 [debug] [Thread-3 (]: On model.idx_sector_rotation.sector_ranking: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "node_id": "model.idx_sector_rotation.sector_ranking"} */
+drop view if exists "idx_warehouse"."gold_gold"."sector_ranking__dbt_backup" cascade
+[0m05:18:36.652534 [debug] [Thread-3 (]: SQL status: DROP VIEW in 0.001 seconds
+[0m05:18:36.655351 [debug] [Thread-3 (]: On model.idx_sector_rotation.sector_ranking: Close
+[0m05:18:36.657322 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '82e3f676-9613-43e9-a29f-d0c395bc1bed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7989b0c5a0e0>]}
+[0m05:18:36.659472 [info ] [Thread-3 (]: 5 of 5 OK created sql view model gold_gold.sector_ranking ...................... [[32mCREATE VIEW[0m in 0.17s]
+[0m05:18:36.661487 [debug] [Thread-3 (]: Finished running node model.idx_sector_rotation.sector_ranking
+[0m05:18:36.665541 [debug] [MainThread]: On master: COMMIT
+[0m05:18:36.667282 [debug] [MainThread]: Using postgres connection "master"
+[0m05:18:36.668785 [debug] [MainThread]: On master: COMMIT
+[0m05:18:36.670765 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m05:18:36.681268 [debug] [MainThread]: SQL status: COMMIT in 0.010 seconds
+[0m05:18:36.683062 [debug] [MainThread]: On master: Close
+[0m05:18:36.685004 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m05:18:36.687075 [debug] [MainThread]: Connection 'model.idx_sector_rotation.stg_benchmark' was properly closed.
+[0m05:18:36.689094 [debug] [MainThread]: Connection 'model.idx_sector_rotation.rotation_history' was properly closed.
+[0m05:18:36.690804 [debug] [MainThread]: Connection 'model.idx_sector_rotation.sector_rotation' was properly closed.
+[0m05:18:36.692799 [debug] [MainThread]: Connection 'model.idx_sector_rotation.sector_ranking' was properly closed.
+[0m05:18:36.694920 [info ] [MainThread]: 
+[0m05:18:36.696711 [info ] [MainThread]: Finished running 1 incremental model, 4 view models in 0 hours 0 minutes and 1.15 seconds (1.15s).
+[0m05:18:36.699612 [debug] [MainThread]: Command end result
+[0m05:18:36.776367 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m05:18:36.790563 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m05:18:36.801774 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt_project/target/osi_document.json
+[0m05:18:36.818643 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dbt_project/target/run_results.json
+[0m05:18:36.820420 [info ] [MainThread]: 
+[0m05:18:36.822612 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m05:18:36.824344 [info ] [MainThread]: 
+[0m05:18:36.826024 [info ] [MainThread]: Done. PASS=5 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=5
+[0m05:18:36.827993 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m05:18:36.831318 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 4.466402, "process_in_blocks": "34304", "process_kernel_time": 1.134333, "process_mem_max_rss": "137544", "process_out_blocks": "0", "process_user_time": 4.509276}
+[0m05:18:36.834444 [debug] [MainThread]: Command `dbt run` succeeded at 05:18:36.833851 after 4.47 seconds
+[0m05:18:36.836596 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7989b7e4edd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7989b67afa60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7989b1f78c70>]}
+[0m05:18:36.838316 [debug] [MainThread]: Flushing usage events
+[0m05:18:41.759502 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m05:18:46.146546 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7502ef90eda0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7502ee01a080>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7502ee01a020>]}
+
+
+============================== 05:18:46.156071 | b902096d-f6a6-4768-9dd3-a7327fceecf2 ==============================
+[0m05:18:46.156071 [info ] [MainThread]: Running with dbt=1.12.0-b3
+[0m05:18:46.158447 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'log_path': '/opt/airflow/dbt_project/logs', 'printer_width': '80', 'profiles_dir': '/opt/airflow/dbt_project', 'send_anonymous_usage_stats': 'True', 'debug': 'False', 'quiet': 'False', 'use_colors': 'True', 'introspect': 'True', 'warn_error': 'None', 'maximum_seed_size_mib': '1', 'cache_selected_only': 'False', 'indirect_selection': 'eager', 'static_parser': 'True', 'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_format': 'default', 'version_check': 'True', 'fail_fast': 'False', 'write_json': 'True', 'invocation_command': 'dbt test --project-dir /opt/airflow/dbt_project --profiles-dir /opt/airflow/dbt_project', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'no_print': 'None', 'target_path': 'None'}
+[0m05:18:46.408596 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b902096d-f6a6-4768-9dd3-a7327fceecf2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7502ee0ca830>]}
+[0m05:18:46.548907 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b902096d-f6a6-4768-9dd3-a7327fceecf2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7502ee4de620>]}
+[0m05:18:46.552679 [info ] [MainThread]: Registered adapter: postgres=1.10.1
+[0m05:18:46.684359 [debug] [MainThread]: checksum: 7e549073af6bc05033fb11f06bb3ab22b0ba2ed35564cb8e246fefe3ef960728, vars: {}, profile: idx_warehouse, target: dev, version: 1.12.0b3
+[0m05:18:47.063190 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m05:18:47.066919 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m05:18:47.069451 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m05:18:47.134572 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b902096d-f6a6-4768-9dd3-a7327fceecf2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7502ec3b97b0>]}
+[0m05:18:47.303518 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m05:18:47.317130 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m05:18:47.343993 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt_project/target/osi_document.json
+[0m05:18:47.404021 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b902096d-f6a6-4768-9dd3-a7327fceecf2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7502ebb4cfd0>]}
+[0m05:18:47.407084 [info ] [MainThread]: Found 5 models, 10 data tests, 4 sources, 475 macros
+[0m05:18:47.409525 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b902096d-f6a6-4768-9dd3-a7327fceecf2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7502ebb4d030>]}
+[0m05:18:47.415010 [info ] [MainThread]: 
+[0m05:18:47.424067 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m05:18:47.425840 [info ] [MainThread]: 
+[0m05:18:47.428190 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m05:18:47.435892 [debug] [ThreadPool]: Acquiring new postgres connection 'list_idx_warehouse_gold_gold'
+[0m05:18:47.437022 [debug] [ThreadPool]: Acquiring new postgres connection 'list_idx_warehouse_gold_silver'
+[0m05:18:47.487548 [debug] [ThreadPool]: Using postgres connection "list_idx_warehouse_gold_gold"
+[0m05:18:47.488104 [debug] [ThreadPool]: Using postgres connection "list_idx_warehouse_gold_silver"
+[0m05:18:47.489855 [debug] [ThreadPool]: On list_idx_warehouse_gold_gold: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "connection_name": "list_idx_warehouse_gold_gold"} */
+select
+      'idx_warehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'gold_gold'
+    union all
+    select
+      'idx_warehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'gold_gold'
+    union all
+    select
+      'idx_warehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'gold_gold'
+  
+[0m05:18:47.491595 [debug] [ThreadPool]: On list_idx_warehouse_gold_silver: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "connection_name": "list_idx_warehouse_gold_silver"} */
+select
+      'idx_warehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'gold_silver'
+    union all
+    select
+      'idx_warehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'gold_silver'
+    union all
+    select
+      'idx_warehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'gold_silver'
+  
+[0m05:18:47.493339 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m05:18:47.495152 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m05:18:47.509408 [debug] [ThreadPool]: SQL status: SELECT 2 in 0.014 seconds
+[0m05:18:47.510236 [debug] [ThreadPool]: SQL status: SELECT 3 in 0.017 seconds
+[0m05:18:47.513445 [debug] [ThreadPool]: On list_idx_warehouse_gold_silver: ROLLBACK
+[0m05:18:47.516480 [debug] [ThreadPool]: On list_idx_warehouse_gold_gold: ROLLBACK
+[0m05:18:47.518641 [debug] [ThreadPool]: On list_idx_warehouse_gold_silver: Close
+[0m05:18:47.520048 [debug] [ThreadPool]: On list_idx_warehouse_gold_gold: Close
+[0m05:18:47.529840 [debug] [MainThread]: Using postgres connection "master"
+[0m05:18:47.531912 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m05:18:47.533898 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m05:18:47.546996 [debug] [MainThread]: SQL status: SELECT 4 in 0.013 seconds
+[0m05:18:47.550386 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b902096d-f6a6-4768-9dd3-a7327fceecf2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7502ebb4c6d0>]}
+[0m05:18:47.552422 [debug] [MainThread]: On master: ROLLBACK
+[0m05:18:47.554411 [debug] [MainThread]: On master: COMMIT
+[0m05:18:47.556058 [debug] [MainThread]: Using postgres connection "master"
+[0m05:18:47.557785 [debug] [MainThread]: On master: COMMIT
+[0m05:18:47.560155 [debug] [MainThread]: SQL status: COMMIT in 0.001 seconds
+[0m05:18:47.561834 [debug] [MainThread]: On master: Close
+[0m05:18:47.569650 [debug] [Thread-1 (]: Began running node test.idx_sector_rotation.accepted_value_sector_rotation_signal__BUY__HOLD__SELL.6e703ea438
+[0m05:18:47.570202 [debug] [Thread-2 (]: Began running node test.idx_sector_rotation.not_null_sector_rotation_sector.453a412300
+[0m05:18:47.570805 [debug] [Thread-3 (]: Began running node test.idx_sector_rotation.not_null_sector_rotation_sector_rank.73ef905bf8
+[0m05:18:47.571324 [debug] [Thread-4 (]: Began running node test.idx_sector_rotation.not_null_sector_rotation_signal.f784a00364
+[0m05:18:47.572714 [info ] [Thread-1 (]: 1 of 10 START test accepted_value_sector_rotation_signal__BUY__HOLD__SELL ...... [RUN]
+[0m05:18:47.574481 [info ] [Thread-2 (]: 2 of 10 START test not_null_sector_rotation_sector ............................. [RUN]
+[0m05:18:47.576147 [info ] [Thread-3 (]: 3 of 10 START test not_null_sector_rotation_sector_rank ........................ [RUN]
+[0m05:18:47.578180 [info ] [Thread-4 (]: 4 of 10 START test not_null_sector_rotation_signal ............................. [RUN]
+[0m05:18:47.580340 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_idx_warehouse_gold_gold, now test.idx_sector_rotation.accepted_value_sector_rotation_signal__BUY__HOLD__SELL.6e703ea438)
+[0m05:18:47.582434 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_idx_warehouse_gold_silver, now test.idx_sector_rotation.not_null_sector_rotation_sector.453a412300)
+[0m05:18:47.584349 [debug] [Thread-3 (]: Acquiring new postgres connection 'test.idx_sector_rotation.not_null_sector_rotation_sector_rank.73ef905bf8'
+[0m05:18:47.586789 [debug] [Thread-4 (]: Acquiring new postgres connection 'test.idx_sector_rotation.not_null_sector_rotation_signal.f784a00364'
+[0m05:18:47.588688 [debug] [Thread-1 (]: Began compiling node test.idx_sector_rotation.accepted_value_sector_rotation_signal__BUY__HOLD__SELL.6e703ea438
+[0m05:18:47.591032 [debug] [Thread-2 (]: Began compiling node test.idx_sector_rotation.not_null_sector_rotation_sector.453a412300
+[0m05:18:47.593783 [debug] [Thread-3 (]: Began compiling node test.idx_sector_rotation.not_null_sector_rotation_sector_rank.73ef905bf8
+[0m05:18:47.596360 [debug] [Thread-4 (]: Began compiling node test.idx_sector_rotation.not_null_sector_rotation_signal.f784a00364
+[0m05:18:47.619894 [debug] [Thread-2 (]: Writing injected SQL for node "test.idx_sector_rotation.not_null_sector_rotation_sector.453a412300"
+[0m05:18:47.628104 [debug] [Thread-3 (]: Writing injected SQL for node "test.idx_sector_rotation.not_null_sector_rotation_sector_rank.73ef905bf8"
+[0m05:18:47.634123 [debug] [Thread-4 (]: Writing injected SQL for node "test.idx_sector_rotation.not_null_sector_rotation_signal.f784a00364"
+[0m05:18:47.643386 [debug] [Thread-1 (]: Compilation Error in test accepted_value_sector_rotation_signal__BUY__HOLD__SELL (models/models.yml)
+  'test_accepted_value' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m05:18:47.645550 [error] [Thread-1 (]: 1 of 10 ERROR accepted_value_sector_rotation_signal__BUY__HOLD__SELL ........... [[31mERROR[0m in 0.07s]
+[0m05:18:47.647460 [debug] [Thread-1 (]: Finished running node test.idx_sector_rotation.accepted_value_sector_rotation_signal__BUY__HOLD__SELL.6e703ea438
+[0m05:18:47.649104 [debug] [Thread-1 (]: Began running node test.idx_sector_rotation.not_null_sector_rotation_week_label.1f56fd036b
+[0m05:18:47.649889 [debug] [Thread-7 (]: Marking all children of 'test.idx_sector_rotation.accepted_value_sector_rotation_signal__BUY__HOLD__SELL.6e703ea438' to be skipped because of status 'error'.  Reason: Compilation Error in test accepted_value_sector_rotation_signal__BUY__HOLD__SELL (models/models.yml)
+  'test_accepted_value' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps"..
+[0m05:18:47.652170 [debug] [Thread-4 (]: Began executing node test.idx_sector_rotation.not_null_sector_rotation_signal.f784a00364
+[0m05:18:47.653303 [info ] [Thread-1 (]: 5 of 10 START test not_null_sector_rotation_week_label ......................... [RUN]
+[0m05:18:47.674542 [debug] [Thread-3 (]: Began executing node test.idx_sector_rotation.not_null_sector_rotation_sector_rank.73ef905bf8
+[0m05:18:47.682635 [debug] [Thread-4 (]: Writing runtime sql for node "test.idx_sector_rotation.not_null_sector_rotation_signal.f784a00364"
+[0m05:18:47.683836 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.idx_sector_rotation.accepted_value_sector_rotation_signal__BUY__HOLD__SELL.6e703ea438, now test.idx_sector_rotation.not_null_sector_rotation_week_label.1f56fd036b)
+[0m05:18:47.688631 [debug] [Thread-3 (]: Writing runtime sql for node "test.idx_sector_rotation.not_null_sector_rotation_sector_rank.73ef905bf8"
+[0m05:18:47.689329 [debug] [Thread-2 (]: Began executing node test.idx_sector_rotation.not_null_sector_rotation_sector.453a412300
+[0m05:18:47.692440 [debug] [Thread-1 (]: Began compiling node test.idx_sector_rotation.not_null_sector_rotation_week_label.1f56fd036b
+[0m05:18:47.699198 [debug] [Thread-2 (]: Writing runtime sql for node "test.idx_sector_rotation.not_null_sector_rotation_sector.453a412300"
+[0m05:18:47.704941 [debug] [Thread-1 (]: Writing injected SQL for node "test.idx_sector_rotation.not_null_sector_rotation_week_label.1f56fd036b"
+[0m05:18:47.715436 [debug] [Thread-4 (]: Using postgres connection "test.idx_sector_rotation.not_null_sector_rotation_signal.f784a00364"
+[0m05:18:47.717775 [debug] [Thread-4 (]: On test.idx_sector_rotation.not_null_sector_rotation_signal.f784a00364: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "node_id": "test.idx_sector_rotation.not_null_sector_rotation_signal.f784a00364"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select signal
+from "idx_warehouse"."gold_gold"."sector_rotation"
+where signal is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m05:18:47.721630 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m05:18:47.724709 [debug] [Thread-3 (]: Using postgres connection "test.idx_sector_rotation.not_null_sector_rotation_sector_rank.73ef905bf8"
+[0m05:18:47.739324 [debug] [Thread-1 (]: Began executing node test.idx_sector_rotation.not_null_sector_rotation_week_label.1f56fd036b
+[0m05:18:47.740473 [debug] [Thread-2 (]: Using postgres connection "test.idx_sector_rotation.not_null_sector_rotation_sector.453a412300"
+[0m05:18:47.741246 [debug] [Thread-3 (]: On test.idx_sector_rotation.not_null_sector_rotation_sector_rank.73ef905bf8: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "node_id": "test.idx_sector_rotation.not_null_sector_rotation_sector_rank.73ef905bf8"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select sector_rank
+from "idx_warehouse"."gold_gold"."sector_rotation"
+where sector_rank is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m05:18:47.749648 [debug] [Thread-1 (]: Writing runtime sql for node "test.idx_sector_rotation.not_null_sector_rotation_week_label.1f56fd036b"
+[0m05:18:47.751117 [debug] [Thread-2 (]: On test.idx_sector_rotation.not_null_sector_rotation_sector.453a412300: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "node_id": "test.idx_sector_rotation.not_null_sector_rotation_sector.453a412300"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select sector
+from "idx_warehouse"."gold_gold"."sector_rotation"
+where sector is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m05:18:47.752026 [debug] [Thread-4 (]: SQL status: SELECT 1 in 0.031 seconds
+[0m05:18:47.753387 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m05:18:47.756417 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m05:18:47.763116 [debug] [Thread-4 (]: On test.idx_sector_rotation.not_null_sector_rotation_signal.f784a00364: ROLLBACK
+[0m05:18:47.769157 [debug] [Thread-4 (]: On test.idx_sector_rotation.not_null_sector_rotation_signal.f784a00364: Close
+[0m05:18:47.772774 [info ] [Thread-4 (]: 4 of 10 PASS not_null_sector_rotation_signal ................................... [[32mPASS[0m in 0.19s]
+[0m05:18:47.775417 [debug] [Thread-4 (]: Finished running node test.idx_sector_rotation.not_null_sector_rotation_signal.f784a00364
+[0m05:18:47.776832 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.020 seconds
+[0m05:18:47.777560 [debug] [Thread-3 (]: SQL status: SELECT 1 in 0.024 seconds
+[0m05:18:47.778167 [debug] [Thread-1 (]: Using postgres connection "test.idx_sector_rotation.not_null_sector_rotation_week_label.1f56fd036b"
+[0m05:18:47.779131 [debug] [Thread-4 (]: Began running node test.idx_sector_rotation.not_null_stg_benchmark_trade_date.f748ae9dec
+[0m05:18:47.782470 [debug] [Thread-2 (]: On test.idx_sector_rotation.not_null_sector_rotation_sector.453a412300: ROLLBACK
+[0m05:18:47.785887 [debug] [Thread-3 (]: On test.idx_sector_rotation.not_null_sector_rotation_sector_rank.73ef905bf8: ROLLBACK
+[0m05:18:47.788659 [debug] [Thread-1 (]: On test.idx_sector_rotation.not_null_sector_rotation_week_label.1f56fd036b: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "node_id": "test.idx_sector_rotation.not_null_sector_rotation_week_label.1f56fd036b"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select week_label
+from "idx_warehouse"."gold_gold"."sector_rotation"
+where week_label is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m05:18:47.792753 [info ] [Thread-4 (]: 6 of 10 START test not_null_stg_benchmark_trade_date ........................... [RUN]
+[0m05:18:47.796065 [debug] [Thread-2 (]: On test.idx_sector_rotation.not_null_sector_rotation_sector.453a412300: Close
+[0m05:18:47.797749 [debug] [Thread-3 (]: On test.idx_sector_rotation.not_null_sector_rotation_sector_rank.73ef905bf8: Close
+[0m05:18:47.799167 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m05:18:47.801283 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.idx_sector_rotation.not_null_sector_rotation_signal.f784a00364, now test.idx_sector_rotation.not_null_stg_benchmark_trade_date.f748ae9dec)
+[0m05:18:47.803541 [info ] [Thread-2 (]: 2 of 10 PASS not_null_sector_rotation_sector ................................... [[32mPASS[0m in 0.22s]
+[0m05:18:47.805384 [info ] [Thread-3 (]: 3 of 10 PASS not_null_sector_rotation_sector_rank .............................. [[32mPASS[0m in 0.22s]
+[0m05:18:47.811626 [debug] [Thread-4 (]: Began compiling node test.idx_sector_rotation.not_null_stg_benchmark_trade_date.f748ae9dec
+[0m05:18:47.813648 [debug] [Thread-2 (]: Finished running node test.idx_sector_rotation.not_null_sector_rotation_sector.453a412300
+[0m05:18:47.815325 [debug] [Thread-3 (]: Finished running node test.idx_sector_rotation.not_null_sector_rotation_sector_rank.73ef905bf8
+[0m05:18:47.821780 [debug] [Thread-4 (]: Writing injected SQL for node "test.idx_sector_rotation.not_null_stg_benchmark_trade_date.f748ae9dec"
+[0m05:18:47.823911 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.025 seconds
+[0m05:18:47.824889 [debug] [Thread-2 (]: Began running node test.idx_sector_rotation.not_null_stg_ticker_metrics_sector.55102f6c1b
+[0m05:18:47.827189 [debug] [Thread-3 (]: Began running node test.idx_sector_rotation.not_null_stg_ticker_metrics_ticker.d2baba6df0
+[0m05:18:47.833418 [debug] [Thread-1 (]: On test.idx_sector_rotation.not_null_sector_rotation_week_label.1f56fd036b: ROLLBACK
+[0m05:18:47.835395 [info ] [Thread-2 (]: 7 of 10 START test not_null_stg_ticker_metrics_sector .......................... [RUN]
+[0m05:18:47.837493 [info ] [Thread-3 (]: 8 of 10 START test not_null_stg_ticker_metrics_ticker .......................... [RUN]
+[0m05:18:47.839602 [debug] [Thread-1 (]: On test.idx_sector_rotation.not_null_sector_rotation_week_label.1f56fd036b: Close
+[0m05:18:47.840571 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.idx_sector_rotation.not_null_sector_rotation_sector.453a412300, now test.idx_sector_rotation.not_null_stg_ticker_metrics_sector.55102f6c1b)
+[0m05:18:47.842525 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.idx_sector_rotation.not_null_sector_rotation_sector_rank.73ef905bf8, now test.idx_sector_rotation.not_null_stg_ticker_metrics_ticker.d2baba6df0)
+[0m05:18:47.844924 [info ] [Thread-1 (]: 5 of 10 PASS not_null_sector_rotation_week_label ............................... [[32mPASS[0m in 0.16s]
+[0m05:18:47.846381 [debug] [Thread-2 (]: Began compiling node test.idx_sector_rotation.not_null_stg_ticker_metrics_sector.55102f6c1b
+[0m05:18:47.847494 [debug] [Thread-4 (]: Began executing node test.idx_sector_rotation.not_null_stg_benchmark_trade_date.f748ae9dec
+[0m05:18:47.848669 [debug] [Thread-3 (]: Began compiling node test.idx_sector_rotation.not_null_stg_ticker_metrics_ticker.d2baba6df0
+[0m05:18:47.851922 [debug] [Thread-1 (]: Finished running node test.idx_sector_rotation.not_null_sector_rotation_week_label.1f56fd036b
+[0m05:18:47.858431 [debug] [Thread-2 (]: Writing injected SQL for node "test.idx_sector_rotation.not_null_stg_ticker_metrics_sector.55102f6c1b"
+[0m05:18:47.863439 [debug] [Thread-4 (]: Writing runtime sql for node "test.idx_sector_rotation.not_null_stg_benchmark_trade_date.f748ae9dec"
+[0m05:18:47.869892 [debug] [Thread-3 (]: Writing injected SQL for node "test.idx_sector_rotation.not_null_stg_ticker_metrics_ticker.d2baba6df0"
+[0m05:18:47.873039 [debug] [Thread-1 (]: Began running node test.idx_sector_rotation.not_null_stg_ticker_metrics_trade_date.7ed60e52c2
+[0m05:18:47.879766 [info ] [Thread-1 (]: 9 of 10 START test not_null_stg_ticker_metrics_trade_date ...................... [RUN]
+[0m05:18:47.881933 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.idx_sector_rotation.not_null_sector_rotation_week_label.1f56fd036b, now test.idx_sector_rotation.not_null_stg_ticker_metrics_trade_date.7ed60e52c2)
+[0m05:18:47.883739 [debug] [Thread-1 (]: Began compiling node test.idx_sector_rotation.not_null_stg_ticker_metrics_trade_date.7ed60e52c2
+[0m05:18:47.889180 [debug] [Thread-1 (]: Writing injected SQL for node "test.idx_sector_rotation.not_null_stg_ticker_metrics_trade_date.7ed60e52c2"
+[0m05:18:47.891796 [debug] [Thread-2 (]: Began executing node test.idx_sector_rotation.not_null_stg_ticker_metrics_sector.55102f6c1b
+[0m05:18:47.892715 [debug] [Thread-4 (]: Using postgres connection "test.idx_sector_rotation.not_null_stg_benchmark_trade_date.f748ae9dec"
+[0m05:18:47.893344 [debug] [Thread-3 (]: Began executing node test.idx_sector_rotation.not_null_stg_ticker_metrics_ticker.d2baba6df0
+[0m05:18:47.896887 [debug] [Thread-2 (]: Writing runtime sql for node "test.idx_sector_rotation.not_null_stg_ticker_metrics_sector.55102f6c1b"
+[0m05:18:47.899082 [debug] [Thread-4 (]: On test.idx_sector_rotation.not_null_stg_benchmark_trade_date.f748ae9dec: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "node_id": "test.idx_sector_rotation.not_null_stg_benchmark_trade_date.f748ae9dec"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select trade_date
+from "idx_warehouse"."gold_silver"."stg_benchmark"
+where trade_date is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m05:18:47.900851 [debug] [Thread-1 (]: Began executing node test.idx_sector_rotation.not_null_stg_ticker_metrics_trade_date.7ed60e52c2
+[0m05:18:47.905233 [debug] [Thread-3 (]: Writing runtime sql for node "test.idx_sector_rotation.not_null_stg_ticker_metrics_ticker.d2baba6df0"
+[0m05:18:47.909503 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m05:18:47.914354 [debug] [Thread-1 (]: Writing runtime sql for node "test.idx_sector_rotation.not_null_stg_ticker_metrics_trade_date.7ed60e52c2"
+[0m05:18:47.923496 [debug] [Thread-2 (]: Using postgres connection "test.idx_sector_rotation.not_null_stg_ticker_metrics_sector.55102f6c1b"
+[0m05:18:47.925612 [debug] [Thread-2 (]: On test.idx_sector_rotation.not_null_stg_ticker_metrics_sector.55102f6c1b: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "node_id": "test.idx_sector_rotation.not_null_stg_ticker_metrics_sector.55102f6c1b"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select sector
+from "idx_warehouse"."gold_silver"."stg_ticker_metrics"
+where sector is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m05:18:47.926513 [debug] [Thread-3 (]: Using postgres connection "test.idx_sector_rotation.not_null_stg_ticker_metrics_ticker.d2baba6df0"
+[0m05:18:47.928077 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m05:18:47.928846 [debug] [Thread-4 (]: SQL status: SELECT 1 in 0.019 seconds
+[0m05:18:47.930228 [debug] [Thread-1 (]: Using postgres connection "test.idx_sector_rotation.not_null_stg_ticker_metrics_trade_date.7ed60e52c2"
+[0m05:18:47.931295 [debug] [Thread-3 (]: On test.idx_sector_rotation.not_null_stg_ticker_metrics_ticker.d2baba6df0: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "node_id": "test.idx_sector_rotation.not_null_stg_ticker_metrics_ticker.d2baba6df0"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select ticker
+from "idx_warehouse"."gold_silver"."stg_ticker_metrics"
+where ticker is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m05:18:47.936150 [debug] [Thread-4 (]: On test.idx_sector_rotation.not_null_stg_benchmark_trade_date.f748ae9dec: ROLLBACK
+[0m05:18:47.938420 [debug] [Thread-1 (]: On test.idx_sector_rotation.not_null_stg_ticker_metrics_trade_date.7ed60e52c2: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "node_id": "test.idx_sector_rotation.not_null_stg_ticker_metrics_trade_date.7ed60e52c2"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select trade_date
+from "idx_warehouse"."gold_silver"."stg_ticker_metrics"
+where trade_date is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m05:18:47.940664 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m05:18:47.943312 [debug] [Thread-4 (]: On test.idx_sector_rotation.not_null_stg_benchmark_trade_date.f748ae9dec: Close
+[0m05:18:47.945136 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m05:18:47.948741 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.021 seconds
+[0m05:18:47.949546 [info ] [Thread-4 (]: 6 of 10 PASS not_null_stg_benchmark_trade_date ................................. [[32mPASS[0m in 0.15s]
+[0m05:18:47.953547 [debug] [Thread-2 (]: On test.idx_sector_rotation.not_null_stg_ticker_metrics_sector.55102f6c1b: ROLLBACK
+[0m05:18:47.955904 [debug] [Thread-4 (]: Finished running node test.idx_sector_rotation.not_null_stg_benchmark_trade_date.f748ae9dec
+[0m05:18:47.958476 [debug] [Thread-2 (]: On test.idx_sector_rotation.not_null_stg_ticker_metrics_sector.55102f6c1b: Close
+[0m05:18:47.960058 [debug] [Thread-3 (]: SQL status: SELECT 1 in 0.019 seconds
+[0m05:18:47.960816 [debug] [Thread-4 (]: Began running node test.idx_sector_rotation.unique_stg_benchmark_trade_date.672e86dfdf
+[0m05:18:47.962711 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.018 seconds
+[0m05:18:47.963770 [info ] [Thread-2 (]: 7 of 10 PASS not_null_stg_ticker_metrics_sector ................................ [[32mPASS[0m in 0.12s]
+[0m05:18:47.966422 [debug] [Thread-3 (]: On test.idx_sector_rotation.not_null_stg_ticker_metrics_ticker.d2baba6df0: ROLLBACK
+[0m05:18:47.968774 [info ] [Thread-4 (]: 10 of 10 START test unique_stg_benchmark_trade_date ............................ [RUN]
+[0m05:18:47.971928 [debug] [Thread-1 (]: On test.idx_sector_rotation.not_null_stg_ticker_metrics_trade_date.7ed60e52c2: ROLLBACK
+[0m05:18:47.974155 [debug] [Thread-2 (]: Finished running node test.idx_sector_rotation.not_null_stg_ticker_metrics_sector.55102f6c1b
+[0m05:18:47.976525 [debug] [Thread-3 (]: On test.idx_sector_rotation.not_null_stg_ticker_metrics_ticker.d2baba6df0: Close
+[0m05:18:47.977943 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.idx_sector_rotation.not_null_stg_benchmark_trade_date.f748ae9dec, now test.idx_sector_rotation.unique_stg_benchmark_trade_date.672e86dfdf)
+[0m05:18:47.979997 [debug] [Thread-1 (]: On test.idx_sector_rotation.not_null_stg_ticker_metrics_trade_date.7ed60e52c2: Close
+[0m05:18:47.983349 [info ] [Thread-3 (]: 8 of 10 PASS not_null_stg_ticker_metrics_ticker ................................ [[32mPASS[0m in 0.14s]
+[0m05:18:47.984921 [debug] [Thread-4 (]: Began compiling node test.idx_sector_rotation.unique_stg_benchmark_trade_date.672e86dfdf
+[0m05:18:47.987367 [info ] [Thread-1 (]: 9 of 10 PASS not_null_stg_ticker_metrics_trade_date ............................ [[32mPASS[0m in 0.11s]
+[0m05:18:47.988609 [debug] [Thread-3 (]: Finished running node test.idx_sector_rotation.not_null_stg_ticker_metrics_ticker.d2baba6df0
+[0m05:18:47.997107 [debug] [Thread-4 (]: Writing injected SQL for node "test.idx_sector_rotation.unique_stg_benchmark_trade_date.672e86dfdf"
+[0m05:18:47.998879 [debug] [Thread-1 (]: Finished running node test.idx_sector_rotation.not_null_stg_ticker_metrics_trade_date.7ed60e52c2
+[0m05:18:48.019596 [debug] [Thread-4 (]: Began executing node test.idx_sector_rotation.unique_stg_benchmark_trade_date.672e86dfdf
+[0m05:18:48.024641 [debug] [Thread-4 (]: Writing runtime sql for node "test.idx_sector_rotation.unique_stg_benchmark_trade_date.672e86dfdf"
+[0m05:18:48.057951 [debug] [Thread-4 (]: Using postgres connection "test.idx_sector_rotation.unique_stg_benchmark_trade_date.672e86dfdf"
+[0m05:18:48.059903 [debug] [Thread-4 (]: On test.idx_sector_rotation.unique_stg_benchmark_trade_date.672e86dfdf: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "node_id": "test.idx_sector_rotation.unique_stg_benchmark_trade_date.672e86dfdf"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    trade_date as unique_field,
+    count(*) as n_records
+
+from "idx_warehouse"."gold_silver"."stg_benchmark"
+where trade_date is not null
+group by trade_date
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m05:18:48.061881 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m05:18:48.072712 [debug] [Thread-4 (]: SQL status: SELECT 1 in 0.011 seconds
+[0m05:18:48.075748 [debug] [Thread-4 (]: On test.idx_sector_rotation.unique_stg_benchmark_trade_date.672e86dfdf: ROLLBACK
+[0m05:18:48.078003 [debug] [Thread-4 (]: On test.idx_sector_rotation.unique_stg_benchmark_trade_date.672e86dfdf: Close
+[0m05:18:48.080322 [info ] [Thread-4 (]: 10 of 10 PASS unique_stg_benchmark_trade_date .................................. [[32mPASS[0m in 0.10s]
+[0m05:18:48.082947 [debug] [Thread-4 (]: Finished running node test.idx_sector_rotation.unique_stg_benchmark_trade_date.672e86dfdf
+[0m05:18:48.087309 [debug] [MainThread]: On master: COMMIT
+[0m05:18:48.088891 [debug] [MainThread]: Using postgres connection "master"
+[0m05:18:48.090635 [debug] [MainThread]: On master: COMMIT
+[0m05:18:48.092108 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m05:18:48.100997 [debug] [MainThread]: SQL status: COMMIT in 0.009 seconds
+[0m05:18:48.103046 [debug] [MainThread]: On master: Close
+[0m05:18:48.104784 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m05:18:48.106373 [debug] [MainThread]: Connection 'test.idx_sector_rotation.not_null_stg_ticker_metrics_trade_date.7ed60e52c2' was properly closed.
+[0m05:18:48.108318 [debug] [MainThread]: Connection 'test.idx_sector_rotation.not_null_stg_ticker_metrics_sector.55102f6c1b' was properly closed.
+[0m05:18:48.110263 [debug] [MainThread]: Connection 'test.idx_sector_rotation.not_null_stg_ticker_metrics_ticker.d2baba6df0' was properly closed.
+[0m05:18:48.111999 [debug] [MainThread]: Connection 'test.idx_sector_rotation.unique_stg_benchmark_trade_date.672e86dfdf' was properly closed.
+[0m05:18:48.114208 [info ] [MainThread]: 
+[0m05:18:48.116025 [info ] [MainThread]: Finished running 10 data tests in 0 hours 0 minutes and 0.69 seconds (0.69s).
+[0m05:18:48.119406 [debug] [MainThread]: Command end result
+[0m05:18:48.292616 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m05:18:48.306249 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m05:18:48.317482 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt_project/target/osi_document.json
+[0m05:18:48.335662 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dbt_project/target/run_results.json
+[0m05:18:48.337603 [info ] [MainThread]: 
+[0m05:18:48.339629 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m05:18:48.341628 [info ] [MainThread]: 
+[0m05:18:48.346001 [error] [MainThread]: [[31mERROR[0m]: in test accepted_value_sector_rotation_signal__BUY__HOLD__SELL (models/models.yml)
+[0m05:18:48.348119 [error] [MainThread]:   Compilation Error in test accepted_value_sector_rotation_signal__BUY__HOLD__SELL (models/models.yml)
+  'test_accepted_value' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m05:18:48.350113 [info ] [MainThread]: 
+[0m05:18:48.351845 [info ] [MainThread]: Done. PASS=9 WARN=0 ERROR=1 SKIP=0 NO-OP=0 REUSED=0 TOTAL=10
+[0m05:18:48.355126 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": false, "command_wall_clock_time": 2.331144, "process_in_blocks": "1008", "process_kernel_time": 0.540916, "process_mem_max_rss": "128812", "process_out_blocks": "0", "process_user_time": 3.289572}
+[0m05:18:48.357218 [debug] [MainThread]: Command `dbt test` failed at 05:18:48.356931 after 2.33 seconds
+[0m05:18:48.359389 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7502ef90eda0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7502ea7e7f40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7502ea7e78e0>]}
+[0m05:18:48.361331 [debug] [MainThread]: Flushing usage events
+[0m05:18:50.797089 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m05:21:15.353064 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79aa3be5ad70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79aa3a65e020>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79aa3a65dfc0>]}
+
+
+============================== 05:21:15.360401 | 77c8638d-5436-4662-b34b-f1eac2b71334 ==============================
+[0m05:21:15.360401 [info ] [MainThread]: Running with dbt=1.12.0-b3
+[0m05:21:15.362456 [debug] [MainThread]: running dbt with arguments {'profiles_dir': '/opt/airflow/dbt_project', 'target_path': 'None', 'log_cache_events': 'False', 'warn_error': 'None', 'cache_selected_only': 'False', 'quiet': 'False', 'introspect': 'True', 'empty': 'None', 'partial_parse': 'True', 'fail_fast': 'False', 'static_parser': 'True', 'log_path': '/opt/airflow/dbt_project/logs', 'maximum_seed_size_mib': '1', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'write_json': 'True', 'log_format': 'default', 'indirect_selection': 'eager', 'use_colors': 'True', 'version_check': 'True', 'printer_width': '80', 'debug': 'False', 'send_anonymous_usage_stats': 'True', 'use_experimental_parser': 'False', 'invocation_command': 'dbt test --project-dir /opt/airflow/dbt_project --profiles-dir /opt/airflow/dbt_project'}
+[0m05:21:15.564347 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '77c8638d-5436-4662-b34b-f1eac2b71334', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79aa39d59480>]}
+[0m05:21:15.679620 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '77c8638d-5436-4662-b34b-f1eac2b71334', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79aa3e991300>]}
+[0m05:21:15.682241 [info ] [MainThread]: Registered adapter: postgres=1.10.1
+[0m05:21:15.784654 [debug] [MainThread]: checksum: 7e549073af6bc05033fb11f06bb3ab22b0ba2ed35564cb8e246fefe3ef960728, vars: {}, profile: idx_warehouse, target: dev, version: 1.12.0b3
+[0m05:21:16.099862 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m05:21:16.102494 [debug] [MainThread]: Partial parsing: updated file: idx_sector_rotation://models/models.yml
+[0m05:21:16.732451 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '77c8638d-5436-4662-b34b-f1eac2b71334', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79aa37e76620>]}
+[0m05:21:16.868373 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m05:21:16.876940 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m05:21:16.892677 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt_project/target/osi_document.json
+[0m05:21:17.002330 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '77c8638d-5436-4662-b34b-f1eac2b71334', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79aa39d45f30>]}
+[0m05:21:17.004099 [info ] [MainThread]: Found 5 models, 10 data tests, 4 sources, 475 macros
+[0m05:21:17.005314 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '77c8638d-5436-4662-b34b-f1eac2b71334', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79aa3bb28bb0>]}
+[0m05:21:17.007742 [info ] [MainThread]: 
+[0m05:21:17.009181 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m05:21:17.010747 [info ] [MainThread]: 
+[0m05:21:17.012323 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m05:21:17.018940 [debug] [ThreadPool]: Acquiring new postgres connection 'list_idx_warehouse_gold_gold'
+[0m05:21:17.019870 [debug] [ThreadPool]: Acquiring new postgres connection 'list_idx_warehouse_gold_silver'
+[0m05:21:17.062904 [debug] [ThreadPool]: Using postgres connection "list_idx_warehouse_gold_gold"
+[0m05:21:17.063395 [debug] [ThreadPool]: Using postgres connection "list_idx_warehouse_gold_silver"
+[0m05:21:17.066095 [debug] [ThreadPool]: On list_idx_warehouse_gold_gold: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "connection_name": "list_idx_warehouse_gold_gold"} */
+select
+      'idx_warehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'gold_gold'
+    union all
+    select
+      'idx_warehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'gold_gold'
+    union all
+    select
+      'idx_warehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'gold_gold'
+  
+[0m05:21:17.068825 [debug] [ThreadPool]: On list_idx_warehouse_gold_silver: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "connection_name": "list_idx_warehouse_gold_silver"} */
+select
+      'idx_warehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'gold_silver'
+    union all
+    select
+      'idx_warehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'gold_silver'
+    union all
+    select
+      'idx_warehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'gold_silver'
+  
+[0m05:21:17.070912 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m05:21:17.072178 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m05:21:17.087196 [debug] [ThreadPool]: SQL status: SELECT 2 in 0.015 seconds
+[0m05:21:17.087807 [debug] [ThreadPool]: SQL status: SELECT 3 in 0.017 seconds
+[0m05:21:17.090293 [debug] [ThreadPool]: On list_idx_warehouse_gold_silver: ROLLBACK
+[0m05:21:17.093372 [debug] [ThreadPool]: On list_idx_warehouse_gold_gold: ROLLBACK
+[0m05:21:17.095745 [debug] [ThreadPool]: On list_idx_warehouse_gold_silver: Close
+[0m05:21:17.097230 [debug] [ThreadPool]: On list_idx_warehouse_gold_gold: Close
+[0m05:21:17.105659 [debug] [MainThread]: Using postgres connection "master"
+[0m05:21:17.107398 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m05:21:17.109180 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m05:21:17.122741 [debug] [MainThread]: SQL status: SELECT 4 in 0.013 seconds
+[0m05:21:17.125745 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '77c8638d-5436-4662-b34b-f1eac2b71334', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79aa39d445b0>]}
+[0m05:21:17.127303 [debug] [MainThread]: On master: ROLLBACK
+[0m05:21:17.130164 [debug] [MainThread]: On master: COMMIT
+[0m05:21:17.132268 [debug] [MainThread]: Using postgres connection "master"
+[0m05:21:17.134848 [debug] [MainThread]: On master: COMMIT
+[0m05:21:17.137569 [debug] [MainThread]: SQL status: COMMIT in 0.001 seconds
+[0m05:21:17.139070 [debug] [MainThread]: On master: Close
+[0m05:21:17.146446 [debug] [Thread-1 (]: Began running node test.idx_sector_rotation.accepted_values_sector_rotation_signal__BUY__HOLD__SELL.4b88094fe2
+[0m05:21:17.147238 [debug] [Thread-2 (]: Began running node test.idx_sector_rotation.not_null_sector_rotation_sector.453a412300
+[0m05:21:17.147736 [debug] [Thread-3 (]: Began running node test.idx_sector_rotation.not_null_sector_rotation_sector_rank.73ef905bf8
+[0m05:21:17.148621 [debug] [Thread-4 (]: Began running node test.idx_sector_rotation.not_null_sector_rotation_signal.f784a00364
+[0m05:21:17.149639 [info ] [Thread-1 (]: 1 of 10 START test accepted_values_sector_rotation_signal__BUY__HOLD__SELL ..... [RUN]
+[0m05:21:17.151435 [info ] [Thread-2 (]: 2 of 10 START test not_null_sector_rotation_sector ............................. [RUN]
+[0m05:21:17.152925 [info ] [Thread-3 (]: 3 of 10 START test not_null_sector_rotation_sector_rank ........................ [RUN]
+[0m05:21:17.154183 [info ] [Thread-4 (]: 4 of 10 START test not_null_sector_rotation_signal ............................. [RUN]
+[0m05:21:17.155810 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_idx_warehouse_gold_gold, now test.idx_sector_rotation.accepted_values_sector_rotation_signal__BUY__HOLD__SELL.4b88094fe2)
+[0m05:21:17.157569 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_idx_warehouse_gold_silver, now test.idx_sector_rotation.not_null_sector_rotation_sector.453a412300)
+[0m05:21:17.159561 [debug] [Thread-3 (]: Acquiring new postgres connection 'test.idx_sector_rotation.not_null_sector_rotation_sector_rank.73ef905bf8'
+[0m05:21:17.161347 [debug] [Thread-4 (]: Acquiring new postgres connection 'test.idx_sector_rotation.not_null_sector_rotation_signal.f784a00364'
+[0m05:21:17.166528 [debug] [Thread-1 (]: Began compiling node test.idx_sector_rotation.accepted_values_sector_rotation_signal__BUY__HOLD__SELL.4b88094fe2
+[0m05:21:17.170702 [debug] [Thread-2 (]: Began compiling node test.idx_sector_rotation.not_null_sector_rotation_sector.453a412300
+[0m05:21:17.172516 [debug] [Thread-3 (]: Began compiling node test.idx_sector_rotation.not_null_sector_rotation_sector_rank.73ef905bf8
+[0m05:21:17.173980 [debug] [Thread-4 (]: Began compiling node test.idx_sector_rotation.not_null_sector_rotation_signal.f784a00364
+[0m05:21:17.184746 [debug] [Thread-1 (]: Writing injected SQL for node "test.idx_sector_rotation.accepted_values_sector_rotation_signal__BUY__HOLD__SELL.4b88094fe2"
+[0m05:21:17.194199 [debug] [Thread-2 (]: Writing injected SQL for node "test.idx_sector_rotation.not_null_sector_rotation_sector.453a412300"
+[0m05:21:17.201711 [debug] [Thread-3 (]: Writing injected SQL for node "test.idx_sector_rotation.not_null_sector_rotation_sector_rank.73ef905bf8"
+[0m05:21:17.209960 [debug] [Thread-4 (]: Writing injected SQL for node "test.idx_sector_rotation.not_null_sector_rotation_signal.f784a00364"
+[0m05:21:17.217295 [debug] [Thread-3 (]: Began executing node test.idx_sector_rotation.not_null_sector_rotation_sector_rank.73ef905bf8
+[0m05:21:17.218485 [debug] [Thread-1 (]: Began executing node test.idx_sector_rotation.accepted_values_sector_rotation_signal__BUY__HOLD__SELL.4b88094fe2
+[0m05:21:17.236867 [debug] [Thread-3 (]: Writing runtime sql for node "test.idx_sector_rotation.not_null_sector_rotation_sector_rank.73ef905bf8"
+[0m05:21:17.241377 [debug] [Thread-1 (]: Writing runtime sql for node "test.idx_sector_rotation.accepted_values_sector_rotation_signal__BUY__HOLD__SELL.4b88094fe2"
+[0m05:21:17.242171 [debug] [Thread-4 (]: Began executing node test.idx_sector_rotation.not_null_sector_rotation_signal.f784a00364
+[0m05:21:17.242751 [debug] [Thread-2 (]: Began executing node test.idx_sector_rotation.not_null_sector_rotation_sector.453a412300
+[0m05:21:17.249485 [debug] [Thread-4 (]: Writing runtime sql for node "test.idx_sector_rotation.not_null_sector_rotation_signal.f784a00364"
+[0m05:21:17.253339 [debug] [Thread-2 (]: Writing runtime sql for node "test.idx_sector_rotation.not_null_sector_rotation_sector.453a412300"
+[0m05:21:17.256144 [debug] [Thread-3 (]: Using postgres connection "test.idx_sector_rotation.not_null_sector_rotation_sector_rank.73ef905bf8"
+[0m05:21:17.257055 [debug] [Thread-1 (]: Using postgres connection "test.idx_sector_rotation.accepted_values_sector_rotation_signal__BUY__HOLD__SELL.4b88094fe2"
+[0m05:21:17.258479 [debug] [Thread-3 (]: On test.idx_sector_rotation.not_null_sector_rotation_sector_rank.73ef905bf8: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "node_id": "test.idx_sector_rotation.not_null_sector_rotation_sector_rank.73ef905bf8"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select sector_rank
+from "idx_warehouse"."gold_gold"."sector_rotation"
+where sector_rank is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m05:21:17.260034 [debug] [Thread-4 (]: Using postgres connection "test.idx_sector_rotation.not_null_sector_rotation_signal.f784a00364"
+[0m05:21:17.261077 [debug] [Thread-1 (]: On test.idx_sector_rotation.accepted_values_sector_rotation_signal__BUY__HOLD__SELL.4b88094fe2: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "node_id": "test.idx_sector_rotation.accepted_values_sector_rotation_signal__BUY__HOLD__SELL.4b88094fe2"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with all_values as (
+
+    select
+        signal as value_field,
+        count(*) as n_records
+
+    from "idx_warehouse"."gold_gold"."sector_rotation"
+    group by signal
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'BUY','HOLD','SELL'
+)
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m05:21:17.262001 [debug] [Thread-2 (]: Using postgres connection "test.idx_sector_rotation.not_null_sector_rotation_sector.453a412300"
+[0m05:21:17.262825 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m05:21:17.264288 [debug] [Thread-4 (]: On test.idx_sector_rotation.not_null_sector_rotation_signal.f784a00364: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "node_id": "test.idx_sector_rotation.not_null_sector_rotation_signal.f784a00364"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select signal
+from "idx_warehouse"."gold_gold"."sector_rotation"
+where signal is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m05:21:17.265704 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m05:21:17.267496 [debug] [Thread-2 (]: On test.idx_sector_rotation.not_null_sector_rotation_sector.453a412300: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "node_id": "test.idx_sector_rotation.not_null_sector_rotation_sector.453a412300"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select sector
+from "idx_warehouse"."gold_gold"."sector_rotation"
+where sector is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m05:21:17.270736 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m05:21:17.273888 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m05:21:17.277088 [debug] [Thread-3 (]: SQL status: SELECT 1 in 0.014 seconds
+[0m05:21:17.282152 [debug] [Thread-3 (]: On test.idx_sector_rotation.not_null_sector_rotation_sector_rank.73ef905bf8: ROLLBACK
+[0m05:21:17.282842 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.017 seconds
+[0m05:21:17.284663 [debug] [Thread-3 (]: On test.idx_sector_rotation.not_null_sector_rotation_sector_rank.73ef905bf8: Close
+[0m05:21:17.285498 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.012 seconds
+[0m05:21:17.286123 [debug] [Thread-4 (]: SQL status: SELECT 1 in 0.015 seconds
+[0m05:21:17.288046 [debug] [Thread-1 (]: On test.idx_sector_rotation.accepted_values_sector_rotation_signal__BUY__HOLD__SELL.4b88094fe2: ROLLBACK
+[0m05:21:17.290121 [info ] [Thread-3 (]: 3 of 10 PASS not_null_sector_rotation_sector_rank .............................. [[32mPASS[0m in 0.13s]
+[0m05:21:17.292294 [debug] [Thread-2 (]: On test.idx_sector_rotation.not_null_sector_rotation_sector.453a412300: ROLLBACK
+[0m05:21:17.294758 [debug] [Thread-4 (]: On test.idx_sector_rotation.not_null_sector_rotation_signal.f784a00364: ROLLBACK
+[0m05:21:17.296898 [debug] [Thread-1 (]: On test.idx_sector_rotation.accepted_values_sector_rotation_signal__BUY__HOLD__SELL.4b88094fe2: Close
+[0m05:21:17.298725 [debug] [Thread-3 (]: Finished running node test.idx_sector_rotation.not_null_sector_rotation_sector_rank.73ef905bf8
+[0m05:21:17.300702 [debug] [Thread-2 (]: On test.idx_sector_rotation.not_null_sector_rotation_sector.453a412300: Close
+[0m05:21:17.302299 [debug] [Thread-4 (]: On test.idx_sector_rotation.not_null_sector_rotation_signal.f784a00364: Close
+[0m05:21:17.304283 [info ] [Thread-1 (]: 1 of 10 PASS accepted_values_sector_rotation_signal__BUY__HOLD__SELL ........... [[32mPASS[0m in 0.15s]
+[0m05:21:17.305516 [debug] [Thread-3 (]: Began running node test.idx_sector_rotation.not_null_sector_rotation_week_label.1f56fd036b
+[0m05:21:17.307336 [info ] [Thread-2 (]: 2 of 10 PASS not_null_sector_rotation_sector ................................... [[32mPASS[0m in 0.15s]
+[0m05:21:17.308455 [info ] [Thread-4 (]: 4 of 10 PASS not_null_sector_rotation_signal ................................... [[32mPASS[0m in 0.15s]
+[0m05:21:17.309631 [debug] [Thread-1 (]: Finished running node test.idx_sector_rotation.accepted_values_sector_rotation_signal__BUY__HOLD__SELL.4b88094fe2
+[0m05:21:17.311199 [info ] [Thread-3 (]: 5 of 10 START test not_null_sector_rotation_week_label ......................... [RUN]
+[0m05:21:17.312662 [debug] [Thread-2 (]: Finished running node test.idx_sector_rotation.not_null_sector_rotation_sector.453a412300
+[0m05:21:17.314461 [debug] [Thread-4 (]: Finished running node test.idx_sector_rotation.not_null_sector_rotation_signal.f784a00364
+[0m05:21:17.315943 [debug] [Thread-1 (]: Began running node test.idx_sector_rotation.not_null_stg_benchmark_trade_date.f748ae9dec
+[0m05:21:17.317677 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.idx_sector_rotation.not_null_sector_rotation_sector_rank.73ef905bf8, now test.idx_sector_rotation.not_null_sector_rotation_week_label.1f56fd036b)
+[0m05:21:17.319489 [debug] [Thread-2 (]: Began running node test.idx_sector_rotation.not_null_stg_ticker_metrics_sector.55102f6c1b
+[0m05:21:17.320774 [debug] [Thread-4 (]: Began running node test.idx_sector_rotation.not_null_stg_ticker_metrics_ticker.d2baba6df0
+[0m05:21:17.322168 [info ] [Thread-1 (]: 6 of 10 START test not_null_stg_benchmark_trade_date ........................... [RUN]
+[0m05:21:17.323973 [debug] [Thread-3 (]: Began compiling node test.idx_sector_rotation.not_null_sector_rotation_week_label.1f56fd036b
+[0m05:21:17.325435 [info ] [Thread-2 (]: 7 of 10 START test not_null_stg_ticker_metrics_sector .......................... [RUN]
+[0m05:21:17.326767 [info ] [Thread-4 (]: 8 of 10 START test not_null_stg_ticker_metrics_ticker .......................... [RUN]
+[0m05:21:17.328289 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.idx_sector_rotation.accepted_values_sector_rotation_signal__BUY__HOLD__SELL.4b88094fe2, now test.idx_sector_rotation.not_null_stg_benchmark_trade_date.f748ae9dec)
+[0m05:21:17.333561 [debug] [Thread-3 (]: Writing injected SQL for node "test.idx_sector_rotation.not_null_sector_rotation_week_label.1f56fd036b"
+[0m05:21:17.335875 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.idx_sector_rotation.not_null_sector_rotation_sector.453a412300, now test.idx_sector_rotation.not_null_stg_ticker_metrics_sector.55102f6c1b)
+[0m05:21:17.337883 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.idx_sector_rotation.not_null_sector_rotation_signal.f784a00364, now test.idx_sector_rotation.not_null_stg_ticker_metrics_ticker.d2baba6df0)
+[0m05:21:17.339215 [debug] [Thread-1 (]: Began compiling node test.idx_sector_rotation.not_null_stg_benchmark_trade_date.f748ae9dec
+[0m05:21:17.341784 [debug] [Thread-2 (]: Began compiling node test.idx_sector_rotation.not_null_stg_ticker_metrics_sector.55102f6c1b
+[0m05:21:17.343233 [debug] [Thread-4 (]: Began compiling node test.idx_sector_rotation.not_null_stg_ticker_metrics_ticker.d2baba6df0
+[0m05:21:17.350142 [debug] [Thread-1 (]: Writing injected SQL for node "test.idx_sector_rotation.not_null_stg_benchmark_trade_date.f748ae9dec"
+[0m05:21:17.355241 [debug] [Thread-2 (]: Writing injected SQL for node "test.idx_sector_rotation.not_null_stg_ticker_metrics_sector.55102f6c1b"
+[0m05:21:17.360426 [debug] [Thread-4 (]: Writing injected SQL for node "test.idx_sector_rotation.not_null_stg_ticker_metrics_ticker.d2baba6df0"
+[0m05:21:17.361113 [debug] [Thread-3 (]: Began executing node test.idx_sector_rotation.not_null_sector_rotation_week_label.1f56fd036b
+[0m05:21:17.367794 [debug] [Thread-3 (]: Writing runtime sql for node "test.idx_sector_rotation.not_null_sector_rotation_week_label.1f56fd036b"
+[0m05:21:17.374576 [debug] [Thread-4 (]: Began executing node test.idx_sector_rotation.not_null_stg_ticker_metrics_ticker.d2baba6df0
+[0m05:21:17.375279 [debug] [Thread-2 (]: Began executing node test.idx_sector_rotation.not_null_stg_ticker_metrics_sector.55102f6c1b
+[0m05:21:17.378943 [debug] [Thread-4 (]: Writing runtime sql for node "test.idx_sector_rotation.not_null_stg_ticker_metrics_ticker.d2baba6df0"
+[0m05:21:17.379469 [debug] [Thread-1 (]: Began executing node test.idx_sector_rotation.not_null_stg_benchmark_trade_date.f748ae9dec
+[0m05:21:17.382740 [debug] [Thread-2 (]: Writing runtime sql for node "test.idx_sector_rotation.not_null_stg_ticker_metrics_sector.55102f6c1b"
+[0m05:21:17.383317 [debug] [Thread-3 (]: Using postgres connection "test.idx_sector_rotation.not_null_sector_rotation_week_label.1f56fd036b"
+[0m05:21:17.389253 [debug] [Thread-1 (]: Writing runtime sql for node "test.idx_sector_rotation.not_null_stg_benchmark_trade_date.f748ae9dec"
+[0m05:21:17.392625 [debug] [Thread-3 (]: On test.idx_sector_rotation.not_null_sector_rotation_week_label.1f56fd036b: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "node_id": "test.idx_sector_rotation.not_null_sector_rotation_week_label.1f56fd036b"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select week_label
+from "idx_warehouse"."gold_gold"."sector_rotation"
+where week_label is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m05:21:17.395667 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m05:21:17.396785 [debug] [Thread-4 (]: Using postgres connection "test.idx_sector_rotation.not_null_stg_ticker_metrics_ticker.d2baba6df0"
+[0m05:21:17.397753 [debug] [Thread-2 (]: Using postgres connection "test.idx_sector_rotation.not_null_stg_ticker_metrics_sector.55102f6c1b"
+[0m05:21:17.399869 [debug] [Thread-4 (]: On test.idx_sector_rotation.not_null_stg_ticker_metrics_ticker.d2baba6df0: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "node_id": "test.idx_sector_rotation.not_null_stg_ticker_metrics_ticker.d2baba6df0"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select ticker
+from "idx_warehouse"."gold_silver"."stg_ticker_metrics"
+where ticker is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m05:21:17.400600 [debug] [Thread-1 (]: Using postgres connection "test.idx_sector_rotation.not_null_stg_benchmark_trade_date.f748ae9dec"
+[0m05:21:17.401576 [debug] [Thread-2 (]: On test.idx_sector_rotation.not_null_stg_ticker_metrics_sector.55102f6c1b: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "node_id": "test.idx_sector_rotation.not_null_stg_ticker_metrics_sector.55102f6c1b"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select sector
+from "idx_warehouse"."gold_silver"."stg_ticker_metrics"
+where sector is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m05:21:17.403114 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m05:21:17.404707 [debug] [Thread-1 (]: On test.idx_sector_rotation.not_null_stg_benchmark_trade_date.f748ae9dec: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "node_id": "test.idx_sector_rotation.not_null_stg_benchmark_trade_date.f748ae9dec"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select trade_date
+from "idx_warehouse"."gold_silver"."stg_benchmark"
+where trade_date is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m05:21:17.405137 [debug] [Thread-3 (]: SQL status: SELECT 1 in 0.009 seconds
+[0m05:21:17.406107 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m05:21:17.408861 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m05:21:17.411705 [debug] [Thread-3 (]: On test.idx_sector_rotation.not_null_sector_rotation_week_label.1f56fd036b: ROLLBACK
+[0m05:21:17.415964 [debug] [Thread-3 (]: On test.idx_sector_rotation.not_null_sector_rotation_week_label.1f56fd036b: Close
+[0m05:21:17.417744 [info ] [Thread-3 (]: 5 of 10 PASS not_null_sector_rotation_week_label ............................... [[32mPASS[0m in 0.10s]
+[0m05:21:17.419286 [debug] [Thread-3 (]: Finished running node test.idx_sector_rotation.not_null_sector_rotation_week_label.1f56fd036b
+[0m05:21:17.420649 [debug] [Thread-3 (]: Began running node test.idx_sector_rotation.not_null_stg_ticker_metrics_trade_date.7ed60e52c2
+[0m05:21:17.421347 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.013 seconds
+[0m05:21:17.421773 [debug] [Thread-4 (]: SQL status: SELECT 1 in 0.019 seconds
+[0m05:21:17.422549 [info ] [Thread-3 (]: 9 of 10 START test not_null_stg_ticker_metrics_trade_date ...................... [RUN]
+[0m05:21:17.425059 [debug] [Thread-1 (]: On test.idx_sector_rotation.not_null_stg_benchmark_trade_date.f748ae9dec: ROLLBACK
+[0m05:21:17.425808 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.020 seconds
+[0m05:21:17.428139 [debug] [Thread-4 (]: On test.idx_sector_rotation.not_null_stg_ticker_metrics_ticker.d2baba6df0: ROLLBACK
+[0m05:21:17.429705 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.idx_sector_rotation.not_null_sector_rotation_week_label.1f56fd036b, now test.idx_sector_rotation.not_null_stg_ticker_metrics_trade_date.7ed60e52c2)
+[0m05:21:17.431913 [debug] [Thread-1 (]: On test.idx_sector_rotation.not_null_stg_benchmark_trade_date.f748ae9dec: Close
+[0m05:21:17.433852 [debug] [Thread-2 (]: On test.idx_sector_rotation.not_null_stg_ticker_metrics_sector.55102f6c1b: ROLLBACK
+[0m05:21:17.435367 [debug] [Thread-4 (]: On test.idx_sector_rotation.not_null_stg_ticker_metrics_ticker.d2baba6df0: Close
+[0m05:21:17.436873 [debug] [Thread-3 (]: Began compiling node test.idx_sector_rotation.not_null_stg_ticker_metrics_trade_date.7ed60e52c2
+[0m05:21:17.439379 [info ] [Thread-1 (]: 6 of 10 PASS not_null_stg_benchmark_trade_date ................................. [[32mPASS[0m in 0.11s]
+[0m05:21:17.440725 [debug] [Thread-2 (]: On test.idx_sector_rotation.not_null_stg_ticker_metrics_sector.55102f6c1b: Close
+[0m05:21:17.441811 [info ] [Thread-4 (]: 8 of 10 PASS not_null_stg_ticker_metrics_ticker ................................ [[32mPASS[0m in 0.10s]
+[0m05:21:17.446254 [debug] [Thread-3 (]: Writing injected SQL for node "test.idx_sector_rotation.not_null_stg_ticker_metrics_trade_date.7ed60e52c2"
+[0m05:21:17.448231 [debug] [Thread-1 (]: Finished running node test.idx_sector_rotation.not_null_stg_benchmark_trade_date.f748ae9dec
+[0m05:21:17.450592 [info ] [Thread-2 (]: 7 of 10 PASS not_null_stg_ticker_metrics_sector ................................ [[32mPASS[0m in 0.11s]
+[0m05:21:17.451896 [debug] [Thread-4 (]: Finished running node test.idx_sector_rotation.not_null_stg_ticker_metrics_ticker.d2baba6df0
+[0m05:21:17.454421 [debug] [Thread-1 (]: Began running node test.idx_sector_rotation.unique_stg_benchmark_trade_date.672e86dfdf
+[0m05:21:17.456415 [debug] [Thread-2 (]: Finished running node test.idx_sector_rotation.not_null_stg_ticker_metrics_sector.55102f6c1b
+[0m05:21:17.458930 [info ] [Thread-1 (]: 10 of 10 START test unique_stg_benchmark_trade_date ............................ [RUN]
+[0m05:21:17.461626 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.idx_sector_rotation.not_null_stg_benchmark_trade_date.f748ae9dec, now test.idx_sector_rotation.unique_stg_benchmark_trade_date.672e86dfdf)
+[0m05:21:17.462846 [debug] [Thread-1 (]: Began compiling node test.idx_sector_rotation.unique_stg_benchmark_trade_date.672e86dfdf
+[0m05:21:17.464241 [debug] [Thread-3 (]: Began executing node test.idx_sector_rotation.not_null_stg_ticker_metrics_trade_date.7ed60e52c2
+[0m05:21:17.475457 [debug] [Thread-1 (]: Writing injected SQL for node "test.idx_sector_rotation.unique_stg_benchmark_trade_date.672e86dfdf"
+[0m05:21:17.480155 [debug] [Thread-3 (]: Writing runtime sql for node "test.idx_sector_rotation.not_null_stg_ticker_metrics_trade_date.7ed60e52c2"
+[0m05:21:17.491465 [debug] [Thread-3 (]: Using postgres connection "test.idx_sector_rotation.not_null_stg_ticker_metrics_trade_date.7ed60e52c2"
+[0m05:21:17.492049 [debug] [Thread-1 (]: Began executing node test.idx_sector_rotation.unique_stg_benchmark_trade_date.672e86dfdf
+[0m05:21:17.493062 [debug] [Thread-3 (]: On test.idx_sector_rotation.not_null_stg_ticker_metrics_trade_date.7ed60e52c2: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "node_id": "test.idx_sector_rotation.not_null_stg_ticker_metrics_trade_date.7ed60e52c2"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select trade_date
+from "idx_warehouse"."gold_silver"."stg_ticker_metrics"
+where trade_date is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m05:21:17.496622 [debug] [Thread-1 (]: Writing runtime sql for node "test.idx_sector_rotation.unique_stg_benchmark_trade_date.672e86dfdf"
+[0m05:21:17.498242 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m05:21:17.509561 [debug] [Thread-1 (]: Using postgres connection "test.idx_sector_rotation.unique_stg_benchmark_trade_date.672e86dfdf"
+[0m05:21:17.511059 [debug] [Thread-1 (]: On test.idx_sector_rotation.unique_stg_benchmark_trade_date.672e86dfdf: /* {"app": "dbt", "dbt_version": "1.12.0b3", "profile_name": "idx_warehouse", "target_name": "dev", "node_id": "test.idx_sector_rotation.unique_stg_benchmark_trade_date.672e86dfdf"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    trade_date as unique_field,
+    count(*) as n_records
+
+from "idx_warehouse"."gold_silver"."stg_benchmark"
+where trade_date is not null
+group by trade_date
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m05:21:17.512561 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m05:21:17.513037 [debug] [Thread-3 (]: SQL status: SELECT 1 in 0.015 seconds
+[0m05:21:17.516617 [debug] [Thread-3 (]: On test.idx_sector_rotation.not_null_stg_ticker_metrics_trade_date.7ed60e52c2: ROLLBACK
+[0m05:21:17.518368 [debug] [Thread-3 (]: On test.idx_sector_rotation.not_null_stg_ticker_metrics_trade_date.7ed60e52c2: Close
+[0m05:21:17.520168 [info ] [Thread-3 (]: 9 of 10 PASS not_null_stg_ticker_metrics_trade_date ............................ [[32mPASS[0m in 0.09s]
+[0m05:21:17.521999 [debug] [Thread-3 (]: Finished running node test.idx_sector_rotation.not_null_stg_ticker_metrics_trade_date.7ed60e52c2
+[0m05:21:17.522595 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.010 seconds
+[0m05:21:17.526148 [debug] [Thread-1 (]: On test.idx_sector_rotation.unique_stg_benchmark_trade_date.672e86dfdf: ROLLBACK
+[0m05:21:17.528382 [debug] [Thread-1 (]: On test.idx_sector_rotation.unique_stg_benchmark_trade_date.672e86dfdf: Close
+[0m05:21:17.530246 [info ] [Thread-1 (]: 10 of 10 PASS unique_stg_benchmark_trade_date .................................. [[32mPASS[0m in 0.07s]
+[0m05:21:17.532216 [debug] [Thread-1 (]: Finished running node test.idx_sector_rotation.unique_stg_benchmark_trade_date.672e86dfdf
+[0m05:21:17.535080 [debug] [MainThread]: On master: COMMIT
+[0m05:21:17.536442 [debug] [MainThread]: Using postgres connection "master"
+[0m05:21:17.537778 [debug] [MainThread]: On master: COMMIT
+[0m05:21:17.539424 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m05:21:17.547599 [debug] [MainThread]: SQL status: COMMIT in 0.008 seconds
+[0m05:21:17.549398 [debug] [MainThread]: On master: Close
+[0m05:21:17.551274 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m05:21:17.552998 [debug] [MainThread]: Connection 'test.idx_sector_rotation.unique_stg_benchmark_trade_date.672e86dfdf' was properly closed.
+[0m05:21:17.554593 [debug] [MainThread]: Connection 'test.idx_sector_rotation.not_null_stg_ticker_metrics_sector.55102f6c1b' was properly closed.
+[0m05:21:17.555658 [debug] [MainThread]: Connection 'test.idx_sector_rotation.not_null_stg_ticker_metrics_trade_date.7ed60e52c2' was properly closed.
+[0m05:21:17.556665 [debug] [MainThread]: Connection 'test.idx_sector_rotation.not_null_stg_ticker_metrics_ticker.d2baba6df0' was properly closed.
+[0m05:21:17.557887 [info ] [MainThread]: 
+[0m05:21:17.559331 [info ] [MainThread]: Finished running 10 data tests in 0 hours 0 minutes and 0.55 seconds (0.55s).
+[0m05:21:17.562558 [debug] [MainThread]: Command end result
+[0m05:21:17.623902 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m05:21:17.631876 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m05:21:17.640474 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt_project/target/osi_document.json
+[0m05:21:17.655724 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dbt_project/target/run_results.json
+[0m05:21:17.657097 [info ] [MainThread]: 
+[0m05:21:17.658574 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m05:21:17.660148 [info ] [MainThread]: 
+[0m05:21:17.661500 [info ] [MainThread]: Done. PASS=10 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=10
+[0m05:21:17.663661 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 2.418596, "process_in_blocks": "0", "process_kernel_time": 0.542582, "process_mem_max_rss": "136452", "process_out_blocks": "0", "process_user_time": 3.173678}
+[0m05:21:17.665216 [debug] [MainThread]: Command `dbt test` succeeded at 05:21:17.665055 after 2.42 seconds
+[0m05:21:17.667427 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79aa3be5ad70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79aa3e991300>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79aa3bfb2350>]}
+[0m05:21:17.669084 [debug] [MainThread]: Flushing usage events
+[0m05:21:18.922696 [debug] [MainThread]: An error was encountered while trying to flush usage events

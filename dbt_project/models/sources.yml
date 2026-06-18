@@ -1,0 +1,44 @@
+version: 2
+
+sources:
+  - name: bronze
+    schema: bronze
+    description: "Data from MinIO"
+    tables:
+      - name: sector_prices
+        description: "Daily prices per ticker per sector"
+        columns:
+          - name: ticker
+          - name: trade_date
+          - name: sector
+          - name: close_price
+          - name: volume
+      
+      - name: sector_metrics
+        description: "Daily return and volume score per ticker"
+        columns:
+        - name: ticker
+        - name: trade_date
+        - name: daily_return
+      
+      - name: ihsg_benchmark
+        description: "Price and daily return from IHSG"
+        columns:
+        - name: trade_date
+        - name: close_price
+        - name: daily_return
+
+  - name: silver
+    schema: silver
+    description: "Spark output: metrics per ticker per day"
+    tables:
+      - name: ticker_metrics_daily
+        description: "4 metrics: price momentum, sharpe ratio, rolling beta, max drawdown"
+        columns:
+        - name: ticker
+        - name: trade_date
+        - name: sector
+        - name: price_momentum
+        - name: sharpe_ratio
+        - name: rolling_beta
+        - name: max_drawdown

@@ -1,0 +1,40 @@
+version: 2
+
+models:
+  - name: stg_ticker_metrics
+    description: " Silver: cleaning Spark output"
+    columns:
+    - name: ticker
+      tests: [not_null]
+    - name: trade_date
+      tests: [not_null]
+    - name: sector
+      tests: [not_null]
+  
+  - name: stg_benchmark
+    description: "Silver: cleaning bronze.ihsg_benchmark"
+    columns:
+      - name: trade_date
+        tests: [not_null, unique]
+  
+  - name: sector_rotation
+    description: "Gold table. Aggregration from 4 metrics from ticker level to sector level per week."
+    columns:
+    - name: week_label
+      tests: [not_null]
+    - name: sector
+      tests: [not_null]
+    - name: sector_rank
+      tests: [not_null]
+    - name: signal
+      tests:
+        - not_null
+        - accepted_values:
+            arguments:
+              values: ['BUY', 'HOLD', 'SELL']
+  
+  - name: sector_ranking
+    description: "View: ranking column and signal from sector_rotation table"
+  
+  - name: rotation_history
+    description: "View: weekly sector rotation history, sorted in ascending"

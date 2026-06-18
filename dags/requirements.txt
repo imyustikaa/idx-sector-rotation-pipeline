@@ -1,0 +1,6 @@
+curl_cffi
+pandas
+pyarrow
+yfinance==0.2.36
+minio
+apache-airflow-providers-apache-spark

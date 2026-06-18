@@ -1,0 +1,12 @@
+idx_warehouse:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: postgres-warehouse
+      port: 5432
+      dbname: idx_warehouse
+      user: warehouse
+      password: warehouse
+      schema: gold
+      threads: 4

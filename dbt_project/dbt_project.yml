@@ -1,0 +1,14 @@
+name: idx_sector_rotation
+version: "1.0.8"
+profile: idx_warehouse
+
+model-paths: ["models"]
+
+models:
+  idx_sector_rotation:
+    silver:
+      +schema: silver
+      +materialized: view
+    gold:
+      +schema: gold
+      +materialized: incremental

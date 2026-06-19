@@ -40,7 +40,6 @@ PRICE_FIELDS = ["close", "high", "low", "open", "volume"]
 def create_spark_session() -> SparkSession:
   return ( SparkSession.builder
     .appName("IDXSectorRotation_Transform")
-    #.master("spark://spark-master:7077")
     .config("spark.executor.memory", "512m")
     .config("spark.driver.memory", "512m")
     .config("spark.driver.extraJavaOptions", "-Djava.net.preferIPv4Stack=true")
@@ -179,8 +178,6 @@ def delete_old_data(week_labels: list):
     cur = conn.cursor()
     placeholders = ",".join(["%s"] * len(week_labels))
     log.info(f"Cleaning existing data for week: {week_labels}")
-    # cur.execute(f"DELETE FROM bronze.sector_metrics WHERE week_label = '{week_label}'")
-    # cur.execute(f"DELETE FROM bronze.sector_prices WHERE week_label = '{week_label}'")
     cur.execute(f"DELETE FROM silver.ihsg_benchmark WHERE week_label IN ({placeholders})", week_labels)
     cur.execute(f"DELETE FROM silver.ticker_metrics_daily WHERE week_label IN ({placeholders})", week_labels)
     cur.execute(f"DELETE FROM silver.sector_daily_returns WHERE week_label IN ({placeholders})", week_labels)
@@ -262,32 +259,6 @@ def run_transform(week_label: str = None) -> None:
 
   current_week_df = combined_df.withColumn("calc_week", week_expr) \
                                .filter(F.col("calc_week").isin(last_12_weeks))
-    
-  # metrics_df = (
-  #   combined_df
-  #   .withColumn("week_label", F.lit(week_label))
-  #   .withColumn("trade_date", F.col("date").cast("date"))
-  #   .withColumn("loaded_at", F.current_timestamp())
-  #   .fillna(0, subset=["daily_return"])
-  #   .select(
-  #     "trade_date", "week_label", "sector",
-  #     "ticker", "daily_return", "loaded_at"
-  #   )
-  # )
-  # load_to_postgres(metrics_df, "bronze.sector_metrics")
-  
-  # price_df = (
-  #   combined_df
-  #   .withColumn("week_label", F.lit(week_label))
-  #   .withColumn("trade_date", F.col("date").cast("date"))
-  #   .withColumn("loaded_at", F.current_timestamp())
-  #   .select(
-  #     "trade_date", "week_label", "sector", "ticker",
-  #     F.col("close").alias("close_price"),
-  #     "volume", "loaded_at"
-  #   )
-  # )
-  # load_to_postgres(price_df, "bronze.sector_prices")
   
   silver_df = (
     current_week_df
@@ -305,7 +276,7 @@ def run_transform(week_label: str = None) -> None:
 
   silver_returns_df = (
     current_week_df
-    .withColumn("week_label", F.lit(week_label))
+    .withColumn("week_label", F.col("calc_week"))
     .withColumn("trade_date", F.col("date").cast("date"))
     .withColumn("loaded_at", F.current_timestamp())
     .fillna(0, subset=["daily_return"])

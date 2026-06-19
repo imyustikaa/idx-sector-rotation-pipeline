@@ -8,5 +8,5 @@ idx_warehouse:
       dbname: idx_warehouse
       user: warehouse
       password: warehouse
-      schema: public
+      schema: silver
       threads: 4

@@ -7,7 +7,6 @@ model-paths: ["models"]
 models:
   idx_sector_rotation:
     silver:
-      +schema: silver
       +materialized: view
     gold:
       +schema: gold

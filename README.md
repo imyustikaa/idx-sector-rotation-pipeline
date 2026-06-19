@@ -226,7 +226,7 @@ Skor gabungan (`momentum_score`) dihitung dari ranking persentil ke-4 metrik ter
 
 ---
 
-## 9. Ringkasan Port yang Dipakai
+## 8. Ringkasan Port yang Dipakai
 | Service | Port di Host | Akses |
 |---|---|---|
 | Airflow Webserver | `8081` | http://localhost:8081 |

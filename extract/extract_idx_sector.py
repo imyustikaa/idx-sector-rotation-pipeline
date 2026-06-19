@@ -8,15 +8,7 @@ from minio import Minio
 from minio.error import S3Error
 from datetime import datetime, timedelta
 from typing import Tuple, List
-# from curl_cffi import requests as curl_requests
 
-# yf.set_tz_cache_location("/opt/airflow/logs/yfinance_cache")
-# session = requests.Session()
-# session.headers.update({
-#   "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-#   "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
-#   "Accept-Language": "en-US,en;q=0.5",
-# })
 
 # ======================= Configurations =======================
 # minio config
@@ -119,7 +111,6 @@ def download_retry(ticker:str, start:str, end:str, retries:int = MAX_RETRIES) ->
         auto_adjust=True,
         progress=False,
         threads=False
-        # session=session
       )
       if not df.empty:
         if isinstance(df.index, pd.DatetimeIndex) and df.index.tz is not None:
@@ -141,9 +132,6 @@ def download_retry(ticker:str, start:str, end:str, retries:int = MAX_RETRIES) ->
 def extract_sector(sector: str, tickers: List[str], start:str, end:str) -> pd.DataFrame:
   log.info(f"Extracting sector: {sector} | tickers: {tickers}")
   
-  # process data for each ticker
-  # records = []
-  # for ticker in tickers:
   df = yf.download(
     tickers, 
     start=start, 

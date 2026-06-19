@@ -8,7 +8,6 @@
 
 with ticker_metrics as (
   select * from {{ ref('stg_ticker_metrics') }}
-
   {% if is_incremental() %}
     where week_label not in (select distinct week_label from {{ this }})
   {% endif %}
@@ -30,13 +29,11 @@ weekly_return as (
   select
     week_label,
     sector,
-    avg(daily_return) * 5 as avg_weekly_return
+    sum(daily_return) / nullif(count(distinct trade_date), 0) * 5 as avg_weekly_return
   from {{ source('silver', 'sector_daily_returns') }}
-
   {% if is_incremental() %}
     where week_label not in (select distinct week_label from {{ this }})
   {% endif %}
-
   group by week_label, sector
 ),
 
@@ -57,7 +54,7 @@ scored as (
     ) / 4.0 as momentum_score
   from sector_agg s
   left join weekly_return w
-    on s.week_label = w.week_label and s.sector = w.sector
+    on trim(s.week_label) = trim(w.week_label) and s.sector = w.sector
 ),
 
 ranked as (

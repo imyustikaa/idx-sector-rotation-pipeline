@@ -127,11 +127,13 @@ Caranya:
 1. Di menu atas, klik **Admin → Variables**
 2. Klik tombol **+** (Add a new record)
 3. Tambahkan variable berikut satu per satu:
+4. 
 | Key | Value | Keterangan |
 |---|---|---|
 | `metabase_admin` | *(email admin Metabase)* | Dipakai untuk login otomatis ke Metabase API |
 | `metabase_pass` | *(password admin Metabase)* | Pasangan dari akun di atas |
 | `dbt_full_refresh` | `false` | Kalau `true`, dbt akan rebuild ulang total tabel gold (full refresh). Pipeline otomatis mereset ini ke `false` setelah dipakai sekali |
+
 4. Klik **Save**.
 
 
@@ -144,6 +146,7 @@ http://localhost:3000
 Saat pertama kali dibuka, perlu melakakuan ini:
 1. **Buat akun admin** — isi nama, email, dan password. **Email & password inilah yang nanti dimasukkan ke Airflow Variable `metabase_admin` dan `metabase_pass`.**
 2. **Hubungkan ke database warehouse**, isi seperti berikut:
+
 | Field | Value |
 |---|---|
 | Database type | PostgreSQL |
@@ -152,6 +155,7 @@ Saat pertama kali dibuka, perlu melakakuan ini:
 | Database name | `idx_warehouse` |
 | Username | `warehouse` |
 | Password | `warehouse` |
+
 3. Selesaikan wizard sampai masuk ke dashboard utama Metabase.
 4. **Cek ID Database** — buka **Admin Settings → Databases**, klik database warehouse yang baru dibuat, lalu lihat angka di URL (contoh: `/admin/databases/2`). Angka ini harus **sama** dengan `MB_WAREHOUSE_DB_ID` di `idx_sector_dag.py` (defaultnya `2`). Kalau beda, edit baris berikut di `idx_sector_dag.py`:
    ```python

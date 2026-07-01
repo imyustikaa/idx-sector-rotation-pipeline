@@ -205,10 +205,8 @@ Penjelasan tiap task:
 ---
 
 ## 6. Hasil Visualisasi di Metabase
-<img width="1180" height="662" alt="Dashboard IDX Sector Rotation-1" src="https://github.com/user-attachments/assets/a22d7a4d-29c1-4393-94ae-74ed36a19ae0" />
-<img width="1180" height="539" alt="Dashboard IDX Sector Rotation-2" src="https://github.com/user-attachments/assets/7bb4bcf0-986a-4dbf-992c-e27c1efa593a" />
-<img width="858" height="414" alt="Dashboard IDX Sector Rotation-3" src="https://github.com/user-attachments/assets/8d60a3ac-20bb-4c36-962d-f2aba4e9ff47" />
-
+<img width="1521" height="943" alt="image" src="https://github.com/user-attachments/assets/6edf0e61-c90e-4254-a40e-c64dbe55ee3b" />
+<img width="1286" height="488" alt="image (1)" src="https://github.com/user-attachments/assets/e74571a1-a8b2-4697-81cb-cb4a8c757db9" />
 
 ---
 
